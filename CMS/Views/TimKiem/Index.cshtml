@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Kết quả tìm kiếm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p class="title" ng-controller="showSearchController" ng-show="!(searchText.length > 0)"><i>Xin lỗi! Kết quả tìm kiếm không tồn tại</i></p>
+
+<!--Sản phẩm-->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sanPham" ng-controller="showSearchController">
+    <input type="hidden" value="1" id="idCategoryProduct" />
+    <span us-spinner="{radius:15, width:4, length: 8}"></span>
+    <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="products.length > 0" style="color: #F44336; font-size: 2em; padding-left: 3em;">Có {{products.length}} sản phẩm</p>
+    <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-hide="products.length > 0" style="color: #F44336; font-size: 2em; padding-left: 3em;">Không có sản phầm nào phù hợp</p>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 item" dir-paginate="(index, value) in products | itemsPerPage:12" ng-show="products.length > 0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
+            <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
+            <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
+            <p class="moTa" ng-bind-html="value.description | limitTo:150"></p>
+            <p class="gia" ng-show="value.price == 0"><span>Đơn giá: </span>{{value.price}}</p>
+            <p class="gia" ng-hide="value.price == 0">Liên hệ</p>
+            <button class="btnDatHang">Đặt hàng</button>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 phanTrang"><dir-pagination-controls></dir-pagination-controls></div>
+</div>
+
+<!--Bài viết-->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tinNoiBat" ng-controller="showSearchController">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tin">
+        <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="posts.length > 0" style="color: #F44336; font-size: 2em; padding-left: 3em;">Có {{posts.length}} bài viết</p>
+        <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-hide="posts.length > 0" style="color: #F44336; font-size: 2em; padding-left: 3em;">Không có bài viết nào phù hợp</p>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 item"  dir-paginate="(index, value) in posts | itemsPerPage:12" ng-show="posts.length > 0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 left pull-left">
+                    <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 right pull-right">
+                    <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" class="tieuDe">{{value.title}}</a>
+                    <p class="moTa" ng-bind-html="value.description | limitTo:150"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 soTrang"><dir-pagination-controls></dir-pagination-controls></div>
+</div>

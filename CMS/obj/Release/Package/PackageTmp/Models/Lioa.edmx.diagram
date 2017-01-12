@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b0394a2b6bc84f4ba192633aec17f347" Name="Diagram1">
+        <EntityTypeShape EntityType="LioaModel.Banner" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LioaModel.Category" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LioaModel.CategoryProduct" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LioaModel.Contact" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="LioaModel.Order" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LioaModel.Post" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.Product" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.User" Width="1.5" PointX="7" PointY="0.875" />
+        <EntityTypeShape EntityType="LioaModel.webpages_Membership" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.webpages_OAuthMembership" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LioaModel.webpages_Roles" Width="1.5" PointX="4.75" PointY="0.875" />
+        <AssociationConnector Association="LioaModel.FK_Category_Category" />
+        <AssociationConnector Association="LioaModel.FK_CategoryProduct_CategoryProduct" />
+        <AssociationConnector Association="LioaModel.webpages_UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bannerTinTuc">
+    <img src="~/Content/Front/images/banner Tin tuc.png" class="img-responsive" />
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lienHe" ng-controller="ContactController">
+    <input type="hidden" value="1" id="idCategoryProduct"/>
+    <p class="tieuDe" style="    font-size: 3em; color: #f44336; font-weight: bold; text-align: center; margin: 1em 0 0.5em 0;">LIÊN HỆ</p>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 thongTin">
+        <div class="form-group" ng-class="{'has-error':!Contact.hoten, 'has-success':Contact.hoten}">
+            <input type="text" class="form-control" id="name" placeholder="Họ tên (bắt buộc)" ng-model="Contact.hoten">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="diachi" placeholder="Địa chỉ" ng-model="Contact.diachi">
+        </div>
+        <div class="form-group" ng-class="{'has-error':!Contact.sdt, 'has-success':Contact.sdt}" style="padding-left:0;">
+            <input type="text" class="form-control" id="sdt" placeholder="Số điện thoại (bắt buộc)" ng-model="Contact.sdt">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="Contact.email">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="tieude" placeholder="Tiêu đề liên hệ" ng-model="Contact.title">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" rows="5" id="noidung" placeholder="Nội dung liên hệ" ng-model="Contact.content"></textarea>
+        </div>
+        <button type="button" class="gui" ng-click="SaveContact()" style="color: #fff; background-color: #07b22b; border: 0; padding: 0.4em 2em; font-size: 1.5em; border-radius: 3em;">Gửi</button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3728.276008238447!2d106.68962651443368!3d20.86092248608952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a7aec4a5fe8fd%3A0xb4b830d22b850ea4!2zNyBMxrDGoW5nIEtow6FuaCBUaGnhu4duLCBOZ8O0IFF1eeG7gW4sIEjhuqNpIFBow7JuZywgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1482169027420" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
+
+@*@Html.Partial("_SPmoi")*@

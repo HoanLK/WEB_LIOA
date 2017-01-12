@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Đơn hàng đã xử lý";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="myApp">
+    <div ng-controller="danhsachOrderCheckedController">
+        <div class="card">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-move-columns ui-grid="gridOptions"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

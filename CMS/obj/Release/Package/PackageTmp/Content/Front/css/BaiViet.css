@@ -1,0 +1,67 @@
+﻿.body {
+}
+
+    .body > .bannerTinTuc {
+        padding: 0;
+        margin-bottom: 1em;
+    }
+
+        .body > .bannerTinTuc > img {
+            width: 100%;
+        }
+
+    .body > .tinChinh {
+        margin-top: 1em;
+    }
+
+        .body > .tinChinh > .item {
+        }
+
+            .body > .tinChinh > .item > .khung {
+                height: 32em;
+                margin-bottom: 2em;
+            }
+
+                .body > .tinChinh > .item > .khung > img {
+                    width: 100%;
+                    height:19em;
+                    margin-bottom: 1em;
+                }
+
+                .body > .tinChinh > .item > .khung > .tieuDe {
+                    color: #F44336;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
+
+                    .body > .tinChinh > .item > .khung > .tieuDe:hover {
+                        text-decoration: none;
+                        color: #07b22b;
+                    }
+
+                .body > .tinChinh > .item > .khung > .moTa {
+                    margin: 1em 0 0.5em 0;
+                    padding-bottom: 1em;
+                    border-bottom: solid 1px #808080;
+                }
+
+                .body > .tinChinh > .item > .khung > .btnXemThem {
+                    color: #F44336;
+                    position: absolute;
+                    overflow: hidden;
+                    bottom: 2%;
+                }
+
+                    .body > .tinChinh > .item > .khung > .btnXemThem:hover {
+                        color: #07b22b;
+                        /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+                    }
+
+
+/*Phone*/
+@media (max-width: 767px) {
+}
+
+/*table*/
+@media (min-width: 767px) and (max-width: 992px) {
+}

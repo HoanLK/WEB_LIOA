@@ -1,0 +1,106 @@
+﻿@model CMS.Models.Product
+@{
+    ViewBag.Title = @Model.title;
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chiTietSP" ng-controller="productController">
+    <input type="hidden" value="@Model.idProduct" id="idProduct" />
+    <input type="hidden" value="1" id="idCategoryProduct" />
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 chiTiet">
+        <span us-spinner="{radius:15, width:4, length: 8}"></span>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 left pull-left">
+            <img ng-src="{{product.image}}" class="img-responsive" alt="{{product.title}}" />
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 right pull-right">
+            <p class="tieuDe">{{product.title}}</p>
+            <p class="gia" ng-show="product.price.length > 0"><span>Đơn giá: </span>{{product.price}}</p>
+            <p class="gia" ng-hide="product.price.length > 0">Liên hệ</p>
+            <button class="btnDatHang" data-toggle="modal" data-target="#datHang">Đặt hàng</button>
+            <div class="chucNang" ng-bind-html="product.description"></div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noiDung" ng-bind-html="product.content"></div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 spCungLoai">
+        <p class="tieuDe">SẢN PHẨM CÙNG LOẠI</p>
+        <span us-spinner="{radius:15, width:4, length: 8}"></span>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 item" dir-paginate="(index, value) in products | itemsPerPage:3">
+            <img ng-src="{{value.image}}" class="img-responsive" />
+            <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_SPkhac")
+
+
+<!-- Đăng ký sản phẩm -->
+<div id="datHang" class="modal fade" role="dialog" ng-controller="themOrderController">
+    <input type="hidden" value="@Model.idProduct" id="idProductCurrent" />
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#109917">
+                <button type="button" class="close" data-dismiss="modal" style="color:#fff; border:0;">&times;</button>
+                <p class="modal-title" style="color:#fff;">Đặt hàng sản phẩm @Model.title</p>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="form" role="form">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group  " style="display:flex">
+                                            <label for="title" style="width:30%; float:left;">Họ tên</label>
+                                            <input type="text" style="width:70%; float:right;" class="form-control" id="hoTen" name="hoTen" ng-model="order.hoTen">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group  " style="display:flex">
+                                            <label for="title" style="width:30%; float:left;">Địa Chỉ</label>
+                                            <input type="text" style="width:70%; float:right;" class="form-control" id="diaChi" name="diaChi" ng-model="order.diaChi">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group  " style="display:flex" ng-class="{'has-error':!order.SDT, 'has-success':order.SDT}">
+                                            <label for="title" style="width:30%; float:left;">Số điện thoại *</label>
+                                            <input type="text" style="width:70%; float:right;" class="form-control" id="SDT" name="SDT" ng-model="order.SDT">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group  " style="display:flex">
+                                            <label for="title" style="width:30%; float:left;">Email</label>
+                                            <input type="email" style="width:70%; float:right;" class="form-control" id="email" name="email" ng-model="order.email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group  " style="display:flex" ng-class="{'has-error':!order.sanPham, 'has-success':order.sanPham}">
+                                            <label for="title" style="width:30%; float:left;">Sản phẩm *</label>
+                                            <input type="text" value="@Model.title" style="width:70%; float:right;" class="form-control" id="tour" name="tour" ng-model="order.sanPham" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group  " style="display:flex">
+                                            <label for="title" style="width:60%; float:left;">Số lượng</label>
+                                            <input type="number" style="width:40%; float:right;" class="form-control" id="guestNumber" name="guestNumber" ng-model="order.soLuong">
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-8">
+                                        <div class="form-group  " style="display:flex">
+                                            <label for="title" style="width:30%; float:left;">Thành tiền</label>
+                                            <input type="number" style="width:70%; float:right;" class="form-control" id="guestNumber" name="guestNumber" value="{{price*order.soLuong}}" readonly>
+                                        </div>
+                                    </div>*@
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="SaveOrder()" style="border:0; background-color:#109917; color:#fff;">Đặt hàng</button>
+                
+            </div>
+        </div>
+    </div>
+</div>

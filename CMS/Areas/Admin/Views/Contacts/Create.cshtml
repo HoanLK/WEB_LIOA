@@ -1,0 +1,63 @@
+﻿@model CMS.Models.Contact
+
+@{
+    ViewBag.Title = "Xem chi tiết liên hệ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="myApp">
+    <div ng-controller="themContactController">
+        <input type="hidden" value="@WebSecurity.CurrentUserName" id="user" />
+        <div class="row">
+            @*<div class="col-md-2">
+                    <button type="button" class="btn btn-block btn-sm ink-reaction btn-success" ng-click="saveOrder()"><span class="fa fa-edit"></span> Lưu</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-block btn-sm ink-reaction btn-info" ng-click="saveOrderAndExit()"><span class="fa fa-check-square-o"></span> Lưu & Thoát</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-block btn-sm ink-reaction btn-info" ng-click="saveOrderAndNew()"><span class="fa fa-plus"></span> Lưu & Thêm mới</button>
+                </div>*@
+            <div class="col-md-2">
+                <button type="button" class="btn btn-block btn-sm ink-reaction btn-danger" ng-click="cancel()"><span class="fa fa-remove"></span> Hủy bỏ</button>
+            </div>
+        </div>
+        <hr class="ruler-lg" />
+        <div class="card">
+            <div class="card-body">
+                <form class="form" role="form">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group  ">
+                                <input type="text" class="form-control" id="hoTen" name="hoTen" ng-model="Contact.hoten" readonly>
+                                <label for="title">Họ tên</label>
+                            </div>
+                            <div class="form-group  ">
+                                <input type="text" class="form-control" id="tour" name="tour" ng-model="Contact.title">
+                                <label for="title">Tiêu đề</label>
+                            </div>
+                            <div class="form-group  ">
+                                <input type="text" class="form-control" id="timeStart" name="timeStart" ng-model="Contact.content">
+                                <label for="title">Nội dung</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group  ">
+                                <input type="text" class="form-control" id="SDT" name="SDT" ng-model="Contact.sdt" readonly>
+                                <label for="title">Số điện thoại</label>
+                            </div>
+                            <div class="form-group  ">
+                                <input type="text" class="form-control" id="email" name="email" ng-model="Contact.email" readonly>
+                                <label for="title">Email</label>
+                            </div>
+                            <div class="form-group  ">
+                                <input type="text" class="form-control" id="diaChi" name="diaChi" ng-model="Contact.diachi" readonly>
+                                <label for="title">Địa Chỉ</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

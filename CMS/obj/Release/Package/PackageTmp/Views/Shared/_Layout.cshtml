@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--SEO-->
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@((ViewBag.Description!=null)?ViewBag.Description:"")" />
+    <meta name="keywords" content='@((ViewBag.Keywords!=null)?ViewBag.Keywords:"")' />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content='@((ViewBag.Robots!=null)?ViewBag.Robots:"index, noop, follow")' />
+    <meta http-equiv="content-language" content="vi" />
+    <link href="~/Content/Front/images/icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="alternate" href="" hreflang="vi" />
+
+    <meta itemprop="name" content='@((ViewBag.Title!=null)?ViewBag.Title : "")'>
+    <meta itemprop="description" content='@((ViewBag.Description!=null)?ViewBag.Description:"")'>
+    <meta itemprop="image" content='@((ViewBag.Image!=null)?ViewBag.Image:"")'>
+
+    <meta property="og:title" content='@((ViewBag.Title!=null)?ViewBag.Title : "")' />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content='@((ViewBag.Image!=null)?ViewBag.Image:"")' />
+    <meta property="og:description" content='@((ViewBag.Description!=null)?ViewBag.Description:"")' />
+    <meta property="og:site_name" content="" />
+
+    <meta name="geo.placename" content="" />
+    <meta name="geo.region" content="VN-HP" />
+    <meta name="geo.position" content="" />
+    <meta name="ICBM" content="" />
+
+    <link rel="image_src" href='@((ViewBag.Image!=null)?ViewBag.Image:"")' />
+
+    <!--Site-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Front/css/Site.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/SanPham.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/BaiViet.min.css" rel="stylesheet" />
+</head>
+<body ng-app="frontApp">
+    <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top">
+            <span class="tieuDe">HOTLINE: </span><a href="tel:0932213699" class="thongTin">093.221.3699</a> |
+            <span class="tieuDe">Email: </span><a href="mailto:bigwincompanyvn@gmail.com" class="thongTin">bigwincompanyvn@gmail.com</a>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mid">
+            <a href="@Url.Action("Index","Home")" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 logo">
+                <img src="~/Content/Front/images/Logo.png" class="img-responsive" />
+            </a>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 menuChinh">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand hidden-lg hidden-sm hidden-md" href="#">MENU</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="/danh-muc-san-pham">Sản phẩm</a></li>
+                                <li><a href="/danh-muc-bai-viet/tin-tuc-2">Tin tức</a></li>
+                                <li><a href="/lien-he">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 goiNgay">
+                <span class="fa fa-volume-control-phone icon"></span>
+                <span class="tieuDe">GỌI NGAY</span>
+                <a href="tel:0904175696" class="thongTin">090.417.5696</a>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bottom" ng-controller="categoryProductController">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 listSP">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle btnList" type="button" data-toggle="dropdown">
+                        <span class="fa fa-bars"></span>
+                        DANH MỤC SẢN PHẨM
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dropdown-submenu" ng-repeat="(index, value) in categoryProducts">
+                            
+                            <img class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-src="{{value.image}}" alt="{{value.title}}" />
+                            <a class="col-lg-8 col-md-8 col-sm-8 col-xs-8" href="/danh-muc-san-pham/{{value.alias}}-{{value.idCategory}}">{{value.title}}</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left pull-left">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spTieuBieu">
+                                            <input type="hidden" value="{{value.idCategory}}" id="idMenu" />
+                                            <p ng-hide="value.new4Products.length > 0" style="font-size: 2em;color: #f44336;">Liên hệ</p>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 item" ng-repeat="(indexProduct, valueProduct) in value.new4Products" ng-show="value.new4Products.length > 0">
+                                                <img ng-src="{{valueProduct.image}}" class="img-responsive" />
+                                                <a href="/san-pham/{{valueProduct.alias}}-{{valueProduct.idProduct}}" class="tieuDe">{{valueProduct.title}}</a>
+                                                <p class="moTa" ng-bind-html="valueProduct.description | limitTo:150"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 timKiem" ng-controller="searchController">
+                <span class="tieuDe">TÌM KIẾM</span>
+                <input class="noiDung" ng-keypress="($event.which === 13)?search():0" ng-model="searchText" />
+                <button class="btnTimKiem" ng-click="search()"><span class="fa fa-search"></span></button>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 gioHang">
+                <span class="fa fa-shopping-bag icon"></span>
+                <span class="tieuDe">GIỎ HÀNG</span>
+                <span class="thongTin">Chưa có sản phẩm</span>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 body">
+        @RenderBody()
+    </div>
+
+    <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 left">
+                <a href="@Url.Action("Index","Home")" class="list">Trang chủ</a>
+                <a href="#" class="list">Giới thiệu</a>
+                <a href="/danh-muc-san-pham" class="list">Sản phầm</a>
+                <a href="/danh-muc-bai-viet/tin-tuc-2" class="list">Tin tức</a>
+                <a href="/lien-he" class="list">Liên hệ</a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 right">
+                <a href="tel:0932213699" class="lienHe"><span class="fa fa-phone"></span> 093.221.3699</a>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 thongTin">
+                <img src="~/Content/Front/images/Logo.png" class="img-responsive" />
+                <p class="tenCty">BIGWIN VIETNAM JOINT STOCK COMPANY</p>
+                <p class="diaChi"><span class="fa fa-map-marker"></span> 7/73 - Luong Khanh Thien street - Luong Khanh Thien Ward - Ngo Quyen District - Hai Phong city.</p>
+                <p class="diaChi"><span class="fa fa-phone"></span> <a href="tel:0932213699">093.221.3699</a> - <a href="tel:0904175696">090.417.5696</a></p>
+                <p class="diaChi"><span class="fa fa-envelope-o"></span> <a href="mailto:bigwincompanyvn@gmail.com">bigwincompanyvn@gmail.com</a></p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 banDo">
+                <p class="tieuDe">TÌM CHÚNG TÔI TRÊN BẢN ĐỒ</p>
+                <a href="/lien-he">
+                    <img src="~/Content/Front/images/Map.PNG" class="img-responsive" />
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gioiThieu">
+                <p class="tieuDe">GIỚI THIỆU VỀ CHÚNG TÔI</p>
+                <p class="noiDung">Bigwin Việt Nam là nhà phân phối chính thức của thương hiệu LiOA trên thị trường Hải Phòng từ các thiets bị điện, ổn áp. Qua nhiều năm phát triển bền vững chúng tôi hiểu được giá trị của sự uy tín và xem trọng giá trị ấy, tất cả khách hàng của Bigwin Việt Nam đều hài lòng về dịch vụ, giá cả, hỗ trợ của chúng tôi. Hãy liên hệ chúng tôi ngay để được tư vấn , hỗ trợ , báo giá tốt nhất nhanh nhất !</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--jquery-->
+    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+
+    <!--AngularJS-->
+    @*<script src="~/Scripts/angular.min.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    @*<script src="~/Scripts/angular-sanitize.min.js"></script>*@
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-cookies.min.js"></script>
+
+    <!--Message-->
+    <script src="~/Content/admin/js/libs/toastr/toastr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            toastr.options = {
+                "positionClass": "toast-bottom-left"
+            };
+        });
+    </script>
+
+    <!--AngularJS custom-->
+    <script src="~/Scripts/Front/frontApp.js"></script>
+    <script src="~/Scripts/Front/pagination/dirPagination.min.js"></script>
+
+    <!--Loading-->
+    <script src="~/Scripts/loading-spinner/spin.min.js"></script>
+    <script src="~/Scripts/loading-spinner/angular-spinner.min.js"></script>
+    <script src="~/Scripts/loading-spinner/angular-loading-spinner.js"></script>
+
+    <!--Banner-->
+    @*<script src="~/Scripts/Front/bannerController.min.js"></script>*@
+
+    <!--Category Post-->
+    <script src="~/Scripts/Front/categoryPostFactory.min.js"></script>
+    <script src="~/Scripts/Front/categoryPostController.min.js"></script>
+
+    <!--Category Product-->
+    <script src="~/Scripts/Front/categoryProductFactory.min.js"></script>
+    <script src="~/Scripts/Front/categoryProductController.min.js"></script>
+
+    <!--Post-->
+    <script src="~/Scripts/Front/postController.min.js"></script>
+
+    <!--Product-->
+    <script src="~/Scripts/Front/productController.min.js"></script>
+
+    <!--Search-->
+    <script src="~/Scripts/Front/searchController.min.js"></script>
+
+    <!--Contact-->
+    <script src="~/Scripts/Front/contactController.min.js"></script>
+
+    <!--Order-->
+    <script src="~/Scripts/Front/themOrderController.min.js"></script>
+
+    <!--Image-->
+    @*<script src="~/Scripts/front/imageController.min.js"></script>*@
+
+    <!--Search-->
+    <script src="~/Scripts/Front/searchController.min.js"></script>
+    <script src="~/Scripts/Front/showSearchController.min.js"></script>
+</body>
+</html>

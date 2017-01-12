@@ -1,0 +1,31 @@
+﻿@model CMS.Models.CategoryProduct
+@{
+    ViewBag.Title = ViewBag.title;
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bannerTinTuc">
+    <img src="~/Content/Front/images/banner Tin tuc.png" class="img-responsive" />
+</div>
+
+@Html.Partial("_SPmoi")
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sanPham" ng-controller="categoryProductController">
+    <input type="hidden" value="@Model.idCategory" id="idCategoryProduct" />
+    <p class="tieuDe">DANH SÁCH SẢN PHẨM</p>
+    <span us-spinner="{radius:15, width:4, length: 8}"></span>
+    <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-hide="products.length > 0" style="color: #F44336; font-size: 2em; padding-left: 3em;">@Model.title:<br /> Chưa có sản phẩm</p>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 item" dir-paginate="(index, value) in products | itemsPerPage:12" ng-show="products.length > 0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
+            <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
+            <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
+            <p class="moTa" ng-bind-html="value.description | limitTo:150"></p>
+            <p class="gia" ng-show="value.price > 0"><span>Giá: </span>{{value.price}}</p>
+            <p class="gia" ng-hide="value.price > 0"><span>Giá: </span>Liên hệ</p>
+            <button class="btnDatHang">Đặt hàng</button>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 phanTrang"><dir-pagination-controls></dir-pagination-controls></div>
+    
+</div>
+
+@Html.Partial("_SPkhac")

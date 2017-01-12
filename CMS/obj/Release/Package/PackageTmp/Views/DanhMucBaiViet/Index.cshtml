@@ -1,0 +1,31 @@
+﻿@model CMS.Models.Post
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bannerTinTuc">
+    <img src="~/Content/Front/images/banner Tin tuc.png" class="img-responsive" />
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tinChinh" ng-controller="categoryPostController">
+    <input type="hidden" value="@Model.idCategory" id="idCategory" />
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 item" dir-paginate="(index, value) in posts | itemsPerPage:9">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
+            <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
+            <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" class="tieuDe">{{value.title}}</a>
+            <p class="moTa" ng-bind-html="value.description | limitTo:150"></p>
+            <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" class="btnXemThem">Đọc thêm <span class="fa fa-angle-right"></span></a>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 soTrang"><dir-pagination-controls></dir-pagination-controls></div>
+    @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 soTrang">
+        <ul class="pagination">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
+    </div>*@
+</div>

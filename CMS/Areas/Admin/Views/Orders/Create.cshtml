@@ -1,0 +1,74 @@
+﻿@model CMS.Models.Order
+
+@{
+    ViewBag.Title = "Thông tin đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="myApp">
+    <div ng-controller="themOrderController">
+        <input type="hidden" value="@WebSecurity.CurrentUserName" id="user" />
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-block btn-sm ink-reaction btn-danger" ng-click="cancel()"><span class="fa fa-remove"></span> Hủy bỏ</button>
+            </div>
+        </div>
+        <hr class="ruler-lg" />
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card-head">
+                        <ul class="nav nav-tabs" data-toggle="tabs">
+                            <li class="active"><a href="#noidung">Đơn hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-body tab-content">
+                        <div class="tab-pane active" id="noidung">
+                            <div class="col-md-9">
+                                <form class="form" role="form">
+                                    <div class="form-group  ">
+                                        <label for="hoTen">Họ tên</label>
+                                        <input type="text" class="form-control" id="hoTen" name="hoTen" ng-model="Order.hoTen" readonly>
+
+                                    </div>
+                                    <div class="form-group  ">
+                                        <label for="diaChi">Địa Chỉ</label>
+                                        <input type="text" class="form-control" id="diaChi" name="diaChi" ng-model="Order.diaChi" readonly>
+
+                                    </div>
+                                    <div class="form-group  " ng-class="{'has-error':!Order.SDT, 'has-success':Order.SDT}">
+                                        <label for="SDT">Số điện thoại *</label>
+                                        <input type="text" class="form-control" id="SDT" name="SDT" ng-model="Order.SDT" readonly>
+
+                                    </div>
+                                    <div class="form-group  ">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" name="email" ng-model="Order.email" readonly>
+
+                                    </div>
+                                    <div class="form-group  " ng-class="{'has-error':!Order.sanPham, 'has-success':Order.sanPham}" readonly>
+                                        <label for="sanPham">Sản phẩm *</label>
+                                        <input type="text" class="form-control" id="sanPham" name="sanPham" ng-model="Order.sanPham" readonly>
+
+                                    </div>
+                                    <div class="form-group  ">
+                                        <label for="soLuong">Số Lượng</label>
+                                        <input type="number" class="form-control" id="soLuong" name="soLuong" ng-model="Order.soLuong" readonly>
+
+                                    </div>
+
+                                    <div class="form-group  ">
+                                        <label for="title">Thành tiền</label>
+                                        <input type="number" class="form-control" id="guestNumber" name="guestNumber" value="{{price*Order.soLuong}}" readonly>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
