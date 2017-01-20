@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b0394a2b6bc84f4ba192633aec17f347" Name="Diagram1">
+      <Diagram DiagramId="b0394a2b6bc84f4ba192633aec17f347" Name="Diagram1" ZoomLevel="73">
         <EntityTypeShape EntityType="LioaModel.Banner" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="LioaModel.Category" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="LioaModel.CategoryProduct" Width="1.5" PointX="0.75" PointY="0.75" />
@@ -19,6 +19,7 @@
         <AssociationConnector Association="LioaModel.FK_Category_Category" />
         <AssociationConnector Association="LioaModel.FK_CategoryProduct_CategoryProduct" />
         <AssociationConnector Association="LioaModel.webpages_UsersInRoles" />
+        <EntityTypeShape EntityType="LioaModel.QC" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

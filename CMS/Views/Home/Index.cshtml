@@ -24,7 +24,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" ng-controller="categoryProductController">
     <input type="hidden" value="1" id="idCategoryProduct" />
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spNoiBat">
-        <p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-0 col-xs-offset-0 tieuDe">SẢN PHẨM NỔI BẬT</p>
+        <p class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-0 col-xs-offset-0 tieuDe">SẢN PHẨM NỔI BẬT</p>
         <span us-spinner="{radius:15, width:4, length: 8}"></span>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <p ng-hide="spNoiBats.length > 0" style="font-size: 4em;color: #f44336;">Chưa có sản phẩm nổi bật</p>
@@ -73,53 +73,12 @@
                 <img ng-src="{{valueProduct.image}}" class="img-responsive" />
                 <a href="/san-pham/{{valueProduct.alias}}-{{valueProduct.idProduct}}" class="tieuDe">{{valueProduct.title}}</a>
                 <p class="moTa" ng-bind-html="valueProduct.description"></p>
-                <p class="gia" ng-show="valueProduct.price > 0"><span>Giá: </span>{{valueProduct.price}}</p>
+                <p class="gia" ng-show="valueProduct.price > 0"><span>Giá: </span>{{valueProduct.price | number:0}} đ</p>
                 <p class="gia" ng-hide="valueProduct.price > 0"><span>Giá: </span>Liên hệ</p>
                 <a href="/san-pham/{{valueProduct.alias}}-{{valueProduct.idProduct}}" class="btnDatHang">Chi tiết</a>
             </div>
+            <a href="/danh-muc-san-pham/{{valueCategoryProduct.alias}}-{{valueCategoryProduct.idCategory}}" class="btnXemThem">Xem thêm <span class="fa fa-angle-double-right"></span></a>
         </div>
-
-        @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spTieuBieu">
-            <p class="tieuDe">ỔN ÁP 3 PHA KHÔ</p>
-            <span us-spinner="{radius:15, width:4, length: 8}"></span>
-            <p ng-hide="onAp3PhaKhos.length > 0" style="font-size: 3em;color: #f44336;">Liên hệ</p>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 item" ng-repeat="(index, value) in onAp3PhaKhos" ng-show="onAp3PhaKhos.length > 0">
-                <img ng-src="{{value.image}}" class="img-responsive" />
-                <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
-                <p class="moTa" ng-bind-html="value.description | limitTo:100"></p>
-                <p class="gia" ng-show="value.price > 0"><span>Giá: </span>{{value.price}}</p>
-                <p class="gia" ng-hide="value.price > 0"><span>Giá: </span>Liên hệ</p>
-                <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnDatHang">Chi tiết</a>
-            </div>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spTieuBieu">
-            <p class="tieuDe">BIẾN ÁP LIOA</p>
-            <span us-spinner="{radius:15, width:4, length: 8}"></span>
-            <p ng-hide="bienApLioas.length > 0" style="font-size: 3em;color: #f44336;">Liên hệ</p>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 item" ng-repeat="(index, value) in bienApLioas" ng-show="bienApLioas.length > 0">
-                <img ng-src="{{value.image}}" class="img-responsive" />
-                <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
-                <div class="moTa" ng-bind-html="value.description | limitTo:100"></div>
-                <p class="gia" ng-show="value.price > 0"><span>Giá: </span>{{value.price}}</p>
-                <p class="gia" ng-hide="value.price > 0"><span>Giá: </span>Liên hệ</p>
-                <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnDatHang">Chi tiết</a>
-            </div>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spTieuBieu">
-            <p class="tieuDe">BIẾN ÁP ĐIỆN LỰC</p>
-            <span us-spinner="{radius:15, width:4, length: 8}"></span>
-            <p ng-hide="bienApDienLucs.length > 0" style="font-size: 3em;color: #f44336;">Liên hệ</p>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 item" ng-repeat="(index, value) in bienApDienLucs" ng-show="bienApDienLucs.length > 0">
-                <img ng-src="{{value.image}}" class="img-responsive" />
-                <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
-                <p class="moTa" ng-bind-html="value.description | limitTo:100"></p>
-                <p class="gia" ng-show="value.price > 0"><span>Giá: </span>{{value.price}}</p>
-                <p class="gia" ng-hide="value.price > 0"><span>Giá: </span>Liên hệ</p>
-                <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnDatHang">Chi tiết</a>
-            </div>
-        </div>*@
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 right pull-left">

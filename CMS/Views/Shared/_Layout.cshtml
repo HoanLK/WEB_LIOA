@@ -40,9 +40,17 @@
     <link href="~/Content/Front/css/Site.min.css" rel="stylesheet" />
     <link href="~/Content/Front/css/SanPham.min.css" rel="stylesheet" />
     <link href="~/Content/Front/css/BaiViet.min.css" rel="stylesheet" />
+    <!--Popup tết-->
+    <link href="~/Content/Front/Popup/popup.min.css" rel="stylesheet" />
 </head>
 <body ng-app="frontApp">
-    <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header">
+    <!--Pop tết-->
+    @Html.Partial("_PopTet")
+
+    <!--Quảng cáo-->
+    @Html.Partial("_QC")
+
+    <header class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 header">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top">
             <span class="tieuDe">HOTLINE: </span><a href="tel:0932213699" class="thongTin">093.221.3699</a> |
             <span class="tieuDe">Email: </span><a href="mailto:bigwincompanyvn@gmail.com" class="thongTin">bigwincompanyvn@gmail.com</a>
@@ -89,7 +97,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dropdown-submenu" ng-repeat="(index, value) in categoryProducts">
-                            
+
                             <img class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-src="{{value.image}}" alt="{{value.title}}" />
                             <a class="col-lg-8 col-md-8 col-sm-8 col-xs-8" href="/danh-muc-san-pham/{{value.alias}}-{{value.idCategory}}">{{value.title}}</a>
                             <ul class="dropdown-menu">
@@ -127,11 +135,11 @@
 
     </header>
 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 body">
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 body">
         @RenderBody()
     </div>
 
-    <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer">
+    <footer class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 footer">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top">
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 left">
                 <a href="@Url.Action("Index","Home")" class="list">Trang chủ</a>
@@ -180,6 +188,15 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="~/Scripts/angular-cookies.min.js"></script>
 
+    <!--Popup tết-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="~/Content/Front/Popup/jquery.popup.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#myModal').popup($('#myModal').data());
+        });
+    </script>
+
     <!--Message-->
     <script src="~/Content/admin/js/libs/toastr/toastr.min.js"></script>
     <script>
@@ -202,6 +219,9 @@
     <!--Banner-->
     @*<script src="~/Scripts/Front/bannerController.min.js"></script>*@
 
+    <!--Quảng cáo-->
+    <script src="~/Scripts/front/QCController.min.js"></script>
+
     <!--Category Post-->
     <script src="~/Scripts/Front/categoryPostFactory.min.js"></script>
     <script src="~/Scripts/Front/categoryPostController.min.js"></script>
@@ -215,6 +235,9 @@
 
     <!--Product-->
     <script src="~/Scripts/Front/productController.min.js"></script>
+
+    <!--Sản phẩm mới-->
+    <script src="~/Scripts/front/newProductController.min.js"></script>
 
     <!--Search-->
     <script src="~/Scripts/Front/searchController.min.js"></script>

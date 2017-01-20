@@ -2,6 +2,20 @@
     font-family: Arial;
 }
 
+.qcLeft {
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 10%;
+}
+
+.qcRight {
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 10%;
+}
+
 .header {
     padding: 0;
 }
@@ -68,7 +82,8 @@
 
                                 .header > .mid > .menuChinh > .navbar-inverse > .container-fluid > .navbar-collapse > .navbar-nav > li > a {
                                     color: #757575;
-                                    font-size: 1.5em;
+                                    font-size: 1.4em;
+                                    padding: 1em 0.5em;
                                 }
 
                                     .header > .mid > .menuChinh > .navbar-inverse > .container-fluid > .navbar-collapse > .navbar-nav > li > a:hover {
@@ -105,6 +120,7 @@
     }
 
         .header > .bottom > .listSP {
+            padding: 0;
         }
 
             .header > .bottom > .listSP > .dropdown {
@@ -170,8 +186,8 @@
                                         }
 
                                         .header > .bottom > .listSP > .dropdown > .dropdown-menu > li > .dropdown-menu .left > .spTieuBieu > .item > img {
-                                            width:100%;
-                                            height:13em;
+                                            width: 100%;
+                                            height: 13em;
                                         }
 
                                         .header > .bottom > .listSP > .dropdown > .dropdown-menu > li > .dropdown-menu .left > .spTieuBieu > .item > .tieuDe {
@@ -211,7 +227,7 @@
 
         .header > .bottom > .timKiem {
             font-size: 1.5em;
-            padding-left: 4em;
+            padding-left: 2em;
             padding-top: 0.2em;
         }
 
@@ -313,7 +329,7 @@
                     }
 
                 .body > .tinMoi > .item > .chiTiet > .moTa {
-                    text-align:justify;
+                    text-align: justify;
                 }
 
         .body > .tinMoi > .btnXemThem {
@@ -442,12 +458,12 @@
         }
 
         .body > .main > .left > .spTieuBieu > .item {
-            height:29em;
+            height: 29em;
         }
 
             .body > .main > .left > .spTieuBieu > .item > img {
                 width: 100%;
-                height: 12em;
+                height: 10em;
                 margin-bottom: 1em;
             }
 
@@ -464,15 +480,15 @@
 
             .body > .main > .left > .spTieuBieu > .item > .moTa {
                 margin-top: 1em;
-                text-align:justify;
+                text-align: justify;
             }
 
             .body > .main > .left > .spTieuBieu > .item > .gia {
                 color: #F44336;
                 font-weight: bold;
-                position:absolute;
-                overflow:hidden;
-                bottom:12%;
+                position: absolute;
+                overflow: hidden;
+                bottom: 12%;
             }
 
                 .body > .main > .left > .spTieuBieu > .item > .gia > span {
@@ -487,15 +503,28 @@
                 border-radius: 2em;
                 text-align: center;
                 margin-bottom: 1em;
-                position:absolute;
-                overflow:hidden;
-                bottom:1%;
+                position: absolute;
+                overflow: hidden;
+                bottom: 1%;
             }
 
                 .body > .main > .left > .spTieuBieu > .item > .btnDatHang:hover {
                     background-color: #F44336;
                     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                    text-decoration:none;
                 }
+
+        .body > .main > .left > .spTieuBieu > .btnXemThem {
+            float:right;
+            margin:1em;
+            color:#F44336;
+            font-weight:bold;
+        }
+
+        .body > .main > .left > .spTieuBieu > .btnXemThem:hover{
+            color:#07b22b;
+            text-decoration:none;
+        }
 
 .body > .main > .right {
     margin-bottom: 1em;
@@ -614,7 +643,7 @@
 
             .footer > .mid > .thongTin > .tenCty {
                 margin: 1em 0;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 font-weight: bold;
             }
 

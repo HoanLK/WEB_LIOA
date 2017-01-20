@@ -144,6 +144,15 @@
           <Property Name="author" Type="nvarchar" MaxLength="50" />
           <Property Name="robots" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="QC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="250" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="image" Type="ntext" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserId" />
@@ -247,6 +256,7 @@
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QC" EntityType="Self.QC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" Schema="dbo" store:Type="Tables" />
@@ -297,6 +307,7 @@
             <End Role="webpages_Roles" EntitySet="webpages_Roles" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <EntitySet Name="QC" EntityType="LioaModel.QC" />
         </EntityContainer>
         <EntityType Name="Banner">
           <Key>
@@ -510,6 +521,15 @@
           <End Type="LioaModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
           <End Type="LioaModel.User" Role="User" Multiplicity="*" />
         </Association>
+        <EntityType Name="QC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -712,6 +732,16 @@
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="QC">
+            <EntityTypeMapping TypeName="LioaModel.QC">
+              <MappingFragment StoreEntitySet="QC">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

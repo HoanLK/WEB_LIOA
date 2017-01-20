@@ -212,6 +212,8 @@
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsAPIController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QCAPIController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QCsController.cs" />
     <Compile Include="Controllers\DanhMucSanPhamController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\BaiVietController.cs" />
@@ -289,6 +291,9 @@
       <DependentUpon>Lioa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
+      <DependentUpon>Lioa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QC.cs">
       <DependentUpon>Lioa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
@@ -2256,6 +2261,9 @@
     <Content Include="Content\Front\css\BaiViet.min.css">
       <DependentUpon>BaiViet.css</DependentUpon>
     </Content>
+    <Content Include="Content\Front\css\BaiViet.min.min.css">
+      <DependentUpon>BaiViet.min.css</DependentUpon>
+    </Content>
     <Content Include="Content\Front\css\SanPham.css" />
     <Content Include="Content\Front\css\SanPham.min.css">
       <DependentUpon>SanPham.css</DependentUpon>
@@ -2277,6 +2285,7 @@
     <Content Include="Content\Front\images\Logo.png" />
     <Content Include="Content\Front\images\LogoNho.png" />
     <Content Include="Content\Front\images\Map.PNG" />
+    <Content Include="Content\Front\images\QC.png" />
     <Content Include="Content\Front\images\SanPham.png" />
     <Content Include="Content\Front\images\SPMoi.png" />
     <Content Include="Content\Front\images\SPNoiBat-TieuDe.png" />
@@ -2285,13 +2294,47 @@
     <Content Include="Content\Front\images\TieuDe.png" />
     <Content Include="Content\Front\images\TinTuc.png" />
     <Content Include="Content\Front\images\TuVan.png" />
+    <Content Include="Content\Front\Popup\jquery.popup.js" />
+    <Content Include="Content\Front\Popup\jquery.popup.min.js" />
+    <Content Include="Content\Front\Popup\pop.jpg" />
+    <Content Include="Content\Front\Popup\popup.css" />
+    <Content Include="Content\Front\Popup\popup.min.css" />
     <Content Include="Content\Images\images\BienApDienLuc.png" />
     <Content Include="Content\Images\images\BienApLioa.png" />
     <Content Include="Content\Images\images\ChiTietSP.png" />
     <Content Include="Content\Images\images\DanhMucTin.png" />
     <Content Include="Content\Images\images\Lioa1Pha.png" />
     <Content Include="Content\Images\images\Lioa3PhaKho.png" />
+    <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-102-100KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-103-1000KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-162-160KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 100KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 10KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 60KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\bien ap lioa\biến áp tự ngẫu 10kv.jpg" />
+    <Content Include="Content\Images\images\San pham\LIOA 1.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRI 30 KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRI-1000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRII-20KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRII.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\lioa-dri-10kva.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\lioa-dri-15kva.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 0,5 kVA SH-500.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 1 kVA DRI-1000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\Ổn Áp LiOA 1 kVA SH-1000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRI-2000.JPG" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRII-2000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA 200KVA-SH3.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA DR3 - 30KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA DR3 - 45KVA.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA DR3 - 60KVA.JPG" />
+    <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA DR3-100KVA.jpg" />
     <Content Include="Content\Images\images\SanPham.png" />
+    <Content Include="Content\Images\images\TIN TUC\dung on ap nhu nao cho dung\LIOA1.jpg" />
+    <Content Include="Content\Images\images\TIN TUC\lua chon o nap cho gia dinh\o nap lioa%281%29.jpg" />
+    <Content Include="Content\Images\images\TIN TUC\lua chon o nap cho gia dinh\o nap lioa.jpg" />
+    <Content Include="Content\Images\images\TIN TUC\on nap la gi\lioa.jpg" />
+    <Content Include="Content\Images\images\TIN TUC\tu vung ky thuat cong nghiep-500x300.jpg" />
     <Content Include="Content\Images\images\TinTuc.png" />
     <Content Include="Content\Images\_thumbs\Images\BienApDienLuc.png" />
     <Content Include="Content\Images\_thumbs\Images\BienApLioa.png" />
@@ -2299,7 +2342,36 @@
     <Content Include="Content\Images\_thumbs\Images\DanhMucTin.png" />
     <Content Include="Content\Images\_thumbs\Images\Lioa1Pha.png" />
     <Content Include="Content\Images\_thumbs\Images\Lioa3PhaKho.png" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-102-100KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-103-1000KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-162-160KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 100KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 10KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 60KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\bien ap lioa\biến áp tự ngẫu 10kv.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\LIOA 1.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRI 30 KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRI-1000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRII-20KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRII.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\lioa-dri-10kva.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\lioa-dri-15kva.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 0,5 kVA SH-500.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 1 kVA DRI-1000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\Ổn Áp LiOA 1 kVA SH-1000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRI-2000.JPG" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRII-2000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA 200KVA-SH3.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA DR3 - 30KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA DR3 - 45KVA.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA DR3 - 60KVA.JPG" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA DR3-100KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\SanPham.png" />
+    <Content Include="Content\Images\_thumbs\Images\TIN TUC\dung on ap nhu nao cho dung\LIOA1.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\TIN TUC\lua chon o nap cho gia dinh\o nap lioa%281%29.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\TIN TUC\lua chon o nap cho gia dinh\o nap lioa.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\TIN TUC\on nap la gi\lioa.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\TIN TUC\tu vung ky thuat cong nghiep-500x300.jpg" />
     <Content Include="Content\Images\_thumbs\Images\TinTuc.png" />
     <Content Include="Content\ui-grid.css" />
     <Content Include="Content\ui-grid.min.css" />
@@ -2358,6 +2430,10 @@
     <Content Include="Scripts\admin\danhsachProductController.min.js">
       <DependentUpon>danhsachProductController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\admin\danhsachQCController.js" />
+    <Content Include="Scripts\admin\danhsachQCController.min.js">
+      <DependentUpon>danhsachQCController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\admin\danhsachVideoController.min.js">
       <DependentUpon>danhsachVideoController.js</DependentUpon>
     </Content>
@@ -2396,6 +2472,10 @@
     </Content>
     <Content Include="Scripts\admin\themProductController.min.js">
       <DependentUpon>themProductController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\admin\themQCController.js" />
+    <Content Include="Scripts\admin\themQCController.min.js">
+      <DependentUpon>themQCController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\admin\themVideoController.min.js">
       <DependentUpon>themVideoController.js</DependentUpon>
@@ -2495,6 +2575,10 @@
     <Content Include="Scripts\front\modernizr.custom.min.js">
       <DependentUpon>modernizr.custom.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\front\newProductController.js" />
+    <Content Include="Scripts\front\newProductController.min.js">
+      <DependentUpon>newProductController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\front\pagination\dirPagination.js" />
     <Content Include="Scripts\front\pagination\dirPagination.min.js">
       <DependentUpon>dirPagination.js</DependentUpon>
@@ -2510,6 +2594,10 @@
     <Content Include="Scripts\front\productController.js" />
     <Content Include="Scripts\front\productController.min.js">
       <DependentUpon>productController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\front\QCController.js" />
+    <Content Include="Scripts\front\QCController.min.js">
+      <DependentUpon>QCController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\front\searchController.js" />
     <Content Include="Scripts\front\searchController.min.js">
@@ -2852,6 +2940,8 @@
     <Content Include="bower_components\angular\README.md" />
     <Content Include="Areas\Admin\Views\Contacts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Contacts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QCs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QCs\Index.cshtml" />
     <None Include="bundleconfig.json" />
     <EntityDeploy Include="Models\Lioa.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -2871,6 +2961,8 @@
     <Content Include="Views\Shared\_SPkhac.cshtml" />
     <Content Include="Views\Shared\_SPmoi.cshtml" />
     <None Include="Properties\PublishProfiles\lioa.pubxml" />
+    <Content Include="Views\Shared\_PopTet.cshtml" />
+    <Content Include="Views\Shared\_QC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

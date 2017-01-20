@@ -4,11 +4,6 @@
     $scope.idCategoryProduct = angular.element('#idCategoryProduct').val();
     $scope.product = {};
     $scope.spNoiBats = [];
-    $scope.onAp1Phas = [];
-    $scope.onAp3PhaKhos = [];
-    $scope.bienApLioas = [];
-    $scope.bienApDienLucs = [];
-    $scope.spMois = [];
     $scope.spKhac = [];
 
     $scope.tinNoiBats1 = [];
@@ -38,8 +33,6 @@
                     });
 
             });
-
-            console.log($scope.categoryProducts);
         });
 
     //Xem sản phẩm
@@ -62,18 +55,6 @@
         .success(function (products) {
             $scope.spKhac = products;
         });
-
-    //Sản phẩm nổi bật
-    //$http.get('/API/ProductsAPI?att=feature&&value=' + 1)
-    //    .success(function (products) {
-    //        $scope.spNoiBats = products;
-    //    });
-
-    //Sản phẩm mới
-    $http.get('/API/ProductsAPI?att=spMoi&&value=' + 0)
-    .success(function (products) {
-        $scope.spMoi = products;
-    });
 
     $http.get('/API/ProductsAPI/')
         .success(function (data) {

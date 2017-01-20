@@ -544,5 +544,29 @@
     "inputFiles": [
       "Scripts/front/header-footer.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/front/newProductController.min.js",
+    "inputFiles": [
+      "Scripts/front/newProductController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/admin/danhsachQCController.min.js",
+    "inputFiles": [
+      "Scripts/admin/danhsachQCController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/admin/themQCController.min.js",
+    "inputFiles": [
+      "Scripts/admin/themQCController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/front/QCController.min.js",
+    "inputFiles": [
+      "Scripts/front/QCController.js"
+    ]
   }
 ]

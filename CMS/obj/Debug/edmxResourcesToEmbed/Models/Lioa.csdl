@@ -24,6 +24,7 @@
       <End Role="webpages_Roles" EntitySet="webpages_Roles" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
+    <EntitySet Name="QC" EntityType="LioaModel.QC" />
   </EntityContainer>
   <EntityType Name="Banner">
     <Key>
@@ -237,4 +238,13 @@
     <End Type="LioaModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
     <End Type="LioaModel.User" Role="User" Multiplicity="*" />
   </Association>
+  <EntityType Name="QC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

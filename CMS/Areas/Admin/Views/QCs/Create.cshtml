@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Thêm quảng cáo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="myApp">
+    <div ng-controller="themQCController">
+        <input type="hidden" value="@WebSecurity.CurrentUserName" id="user" />
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-block btn-sm ink-reaction btn-success" ng-click="saveQC()"><span class="fa fa-edit"></span> Lưu</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-block btn-sm ink-reaction btn-info" ng-click="saveQCAndExit()"><span class="fa fa-check-square-o"></span> Lưu & Thoát</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-block btn-sm ink-reaction btn-danger" ng-click="cancel()"><span class="fa fa-remove"></span> Hủy bỏ</button>
+            </div>
+        </div>
+        <hr class="ruler-lg" />
+
+        <div class="card">
+            <div class="card-body">
+                <form class="form" role="form">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group  " ng-class="{'has-error':!QC.title, 'has-success':QC.title}">
+                                <input type="text" class="form-control" id="title" name="title" ng-model="QC.title" ng-change="changeTitle()">
+                                <label for="title">Tiêu đề *</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="card-head">
+                        <ul class="nav nav-tabs" data-toggle="tabs">
+                            <li class="active"><a href="#noidung">Quảng cáo</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-body tab-content">
+                        <div class="tab-pane active" id="noidung">
+                            <div class="col-md-9">
+                                <form class="form" role="form">
+                                    <div class="form-group">
+                                        <input type="text" name="image" id="image" ng-model="QC.image" class="form-control" /> <button class="btn btn-primary" ng-click="chooseImage()">Chọn ảnh</button>
+                                        <label for="image">Hình ảnh</label>
+                                        <img class="img-responsive" ng-src="{{QC.image}}" ng-show="QC.image" />
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <form class="form" role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="link" name="link" ng-model="QC.link" />
+                                        <label for="link">Link</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

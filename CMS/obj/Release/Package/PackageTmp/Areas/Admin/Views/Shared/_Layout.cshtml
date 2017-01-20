@@ -187,11 +187,20 @@
                     </li>
                     <!--Banner-->
                     @*<li>
-                        <a href="@Url.Action("Index", "Banners", new { Area = "Admin" })">
+                            <a href="@Url.Action("Index", "Banners", new { Area = "Admin" })">
+                                <div class="gui-icon"><i class="fa fa-image"></i></div>
+                                <span class="title">Banner</span>
+                            </a>
+                        </li>*@
+
+                    <!--Quảng cáo-->
+                    <li>
+                        <a href="@Url.Action("Index", "QCs", new { Area = "Admin" })">
                             <div class="gui-icon"><i class="fa fa-image"></i></div>
-                            <span class="title">Banner</span>
+                            <span class="title">Quảng cáo</span>
                         </a>
-                    </li>*@
+                    </li>
+
                     <!--Contact-->
                     <li>
                         <a href="@Url.Action("Index", "Contacts", new { Area = "Admin" })">
@@ -201,18 +210,18 @@
                     </li>
                     <!--Video-->
                     @*<li>
-                        <a href="@Url.Action("Index", "Videos", new { Area = "Admin" })">
-                            <div class="gui-icon"><i class="fa fa-youtube-play"></i></div>
-                            <span class="title">Video</span>
-                        </a>
-                    </li>*@
+                            <a href="@Url.Action("Index", "Videos", new { Area = "Admin" })">
+                                <div class="gui-icon"><i class="fa fa-youtube-play"></i></div>
+                                <span class="title">Video</span>
+                            </a>
+                        </li>*@
                     <!--Image-->
                     @*<li>
-                        <a href="@Url.Action("Index", "Images", new { Area = "Admin" })">
-                            <div class="gui-icon"><i class="fa fa-file-image-o"></i></div>
-                            <span class="title">Hình ảnh</span>
-                        </a>
-                    </li>*@
+                            <a href="@Url.Action("Index", "Images", new { Area = "Admin" })">
+                                <div class="gui-icon"><i class="fa fa-file-image-o"></i></div>
+                                <span class="title">Hình ảnh</span>
+                            </a>
+                        </li>*@
                     <!--Account-->
                     <li>
                         <a href="@Url.Action("Index", "Account" , new { Area="" })">
@@ -341,6 +350,9 @@
     <!--Banner-->
     <script src="~/Scripts/admin/themBannerController.min.js"></script>
     <script src="~/Scripts/admin/danhsachBannerController.min.js"></script>
+    <!--Quảng cáo-->
+    <script src="~/Scripts/admin/danhsachQCController.min.js"></script>
+    <script src="~/Scripts/admin/themQCController.min.js"></script>
     <!--Video-->
     <script src="~/Scripts/admin/themVideoController.js"></script>
     <script src="~/Scripts/admin/danhsachVideoController.js"></script>
