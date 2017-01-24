@@ -21,7 +21,7 @@
 }
 
     .header > .top {
-        background-color: #000;
+        background-color: #f44336;
         padding: 0.5em 4em;
     }
 
@@ -30,18 +30,18 @@
         }
 
         .header > .top > .thongTin {
-            color: #07b22b;
+            color: #fff;
         }
 
     .header > .mid {
-        padding: 1em;
+        padding: 1em 1em 0 1em;
     }
 
         .header > .mid > .logo {
         }
 
             .header > .mid > .logo > img {
-                margin: 0 auto;
+                margin: 1em auto;
             }
 
         .header > .mid > .menuChinh {
@@ -90,7 +90,42 @@
                                         color: #F44336;
                                     }
 
+        .header > .mid > .thongTinChinh {
+            background: url(../images/background-top.png) no-repeat;
+            background-size: 100%;
+        }
+
+            .header > .mid > .thongTinChinh > .tenCty {
+                color: #f44336;
+                font-size: 1.5em;
+                font-weight: bold;
+                margin-bottom: 0.5em;
+                text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            }
+
+            .header > .mid > .thongTinChinh > .thongTin {
+                font-size: 1.2em;
+                color: #2a04ec;
+            }
+
+                .header > .mid > .thongTinChinh > .thongTin > span {
+                }
+
+            .header > .mid > .thongTinChinh > .sdt {
+                color: #2a04ec;
+                font-size: 1.3em;
+                margin-bottom: 1em;
+                display: inline-block;
+            }
+
+                .header > .mid > .thongTinChinh > .sdt > span {
+                }
+
+                .header > .mid > .thongTinChinh > .sdt:hover {
+                }
+
         .header > .mid > .goiNgay {
+            margin:1.5em auto;
         }
 
             .header > .mid > .goiNgay > .icon {
@@ -279,6 +314,56 @@
                 width: 80%;
                 float: right;
             }
+
+    .header > .bottom-home {
+        padding: 0;
+        margin-bottom:-1em;
+    }
+
+        .header > .bottom-home > .navbar-inverse {
+            margin: 0;
+            border: none;
+            border-radius: 0;
+            background-color: #f44336;
+            min-height: 0.1em;
+        }
+
+            .header > .bottom-home > .navbar-inverse > .container-fluid {
+                padding:0;
+            }
+
+                .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-header {
+                }
+
+                    .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-header > .navbar-toggle {
+                        background-color:#07b22b;
+                        border:none;
+                    }
+
+                        .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-header > .navbar-toggle > .icon-bar {
+                        }
+
+                .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-collapse {
+                    padding:0;
+                }
+
+                    .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-collapse > .navbar-nav {
+                    }
+
+                        .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-collapse > .navbar-nav > li {
+                        }
+
+                            .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-collapse > .navbar-nav > li > a {
+                                color: #fff;
+                                padding: 0.5em 1em;
+                                text-transform: uppercase;
+                                font-size: 1.1em;
+                            }
+
+                                .header > .bottom-home > .navbar-inverse > .container-fluid > .navbar-collapse > .navbar-nav > li > a:hover {
+                                    background-color: #fff;
+                                    color: #f44336;
+                                }
 
 .body {
     padding: 0;
@@ -511,20 +596,20 @@
                 .body > .main > .left > .spTieuBieu > .item > .btnDatHang:hover {
                     background-color: #F44336;
                     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-                    text-decoration:none;
+                    text-decoration: none;
                 }
 
         .body > .main > .left > .spTieuBieu > .btnXemThem {
-            float:right;
-            margin:1em;
-            color:#F44336;
-            font-weight:bold;
+            float: right;
+            margin: 1em;
+            color: #F44336;
+            font-weight: bold;
         }
 
-        .body > .main > .left > .spTieuBieu > .btnXemThem:hover{
-            color:#07b22b;
-            text-decoration:none;
-        }
+            .body > .main > .left > .spTieuBieu > .btnXemThem:hover {
+                color: #07b22b;
+                text-decoration: none;
+            }
 
 .body > .main > .right {
     margin-bottom: 1em;
@@ -689,6 +774,17 @@
     .header > .bottom > .timKiem {
         font-size: 1em;
         padding: 1em;
+    }
+
+    .header>.mid>.thongTinChinh>.tenCty{
+        margin-top:0.5em;
+        font-size:1.2em;
+        margin-bottom:0;
+    }
+
+    .header>.mid>.thongTinChinh>.thongTin{
+        font-size:1em;
+        margin:0;
     }
 
     .body > .main > .spNoiBat > .tieuDe {

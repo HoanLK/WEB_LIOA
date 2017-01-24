@@ -44,6 +44,15 @@ namespace CMS.Areas.Admin.Controllers
                 return model;
             }
 
+            //Load sản phẩm cho trang chủ
+            if (att == "spMoiHome" && att != null && value != null)
+            {
+                int idCategoryProduct = int.Parse(value);
+                var model = db.Product.Where(p => p.published == 1).OrderByDescending(p => p.timeModified);
+
+                return model;
+            }
+
             if (att == "idCategoryProductHome" && att != null && value != null)
             {
                 int idCategoryProduct = int.Parse(value);

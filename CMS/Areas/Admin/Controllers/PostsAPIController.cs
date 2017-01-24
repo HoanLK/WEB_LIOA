@@ -55,7 +55,7 @@ namespace CMS.Areas.Admin.Controllers
             if (att == "feature1" && att != null && value != null)
             {
                 int feature = int.Parse(value);
-                var model = db.Post.Where(p => p.featured == feature && p.published == 1).OrderByDescending(p => p.timeModified).Take(6);
+                var model = db.Post.Where(p => p.featured == feature && p.published == 1).OrderByDescending(p => p.timeModified);
 
                 return model;
             }

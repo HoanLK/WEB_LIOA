@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--SEO-->
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@((ViewBag.Description!=null)?ViewBag.Description:"")" />
+    <meta name="keywords" content='@((ViewBag.Keywords!=null)?ViewBag.Keywords:"")' />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content='@((ViewBag.Robots!=null)?ViewBag.Robots:"index, noop, follow")' />
+    <meta http-equiv="content-language" content="vi" />
+    <link href="~/Content/Front/images/icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="alternate" href="" hreflang="vi" />
+
+    <meta itemprop="name" content='@((ViewBag.Title!=null)?ViewBag.Title : "")'>
+    <meta itemprop="description" content='@((ViewBag.Description!=null)?ViewBag.Description:"")'>
+    <meta itemprop="image" content='@((ViewBag.Image!=null)?ViewBag.Image:"")'>
+
+    <meta property="og:title" content='@((ViewBag.Title!=null)?ViewBag.Title : "")' />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content='@((ViewBag.Image!=null)?ViewBag.Image:"")' />
+    <meta property="og:description" content='@((ViewBag.Description!=null)?ViewBag.Description:"")' />
+    <meta property="og:site_name" content="" />
+
+    <meta name="geo.placename" content="" />
+    <meta name="geo.region" content="VN-HP" />
+    <meta name="geo.position" content="" />
+    <meta name="ICBM" content="" />
+
+    <link rel="image_src" href='@((ViewBag.Image!=null)?ViewBag.Image:"")' />
+
+    <!--Site-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Front/css/Site.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/SanPham.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/BaiViet.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/Home.min.css" rel="stylesheet" />
+    <!--Popup tết-->
+    <link href="~/Content/Front/Popup/popup.min.css" rel="stylesheet" />
+</head>
+<body ng-app="frontApp">
+    <!--Pop tết-->
+    @*@Html.Partial("_PopTet")*@
+
+    <!--Quảng cáo-->
+    @Html.Partial("_QC")
+
+    <header class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 header">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top">
+            <span class="tieuDe">HOTLINE: </span><a href="tel:0932213699" class="thongTin">093.221.3699</a> |
+            <span class="tieuDe">Email: </span><a href="mailto:bigwincompanyvn@gmail.com" class="thongTin">bigwincompanyvn@gmail.com</a>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mid">
+            <a href="@Url.Action("Index","Home")" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 logo">
+                <img src="~/Content/Front/images/Logo.png" class="img-responsive" />
+            </a>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 thongTinChinh">
+                <p class="tenCty">CÔNG TY CỔ PHẦN BIGWIN</p>
+                <p class="thongTin"><span class="fa fa-map-marker"></span> Địa chỉ: 7/73 - Lương Khánh Thiện, Q. Ngô Quyền, tp. Hải Phòng VPĐD: 375 Ngô Gia Tự, Đằng Lâm, Hải An, Hải Phòng</p>
+                <a class="sdt" href="tel:0932213699"><span class="fa fa-volume-control-phone"></span> 093.221.3699</a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 goiNgay">
+                <span class="fa fa-volume-control-phone icon"></span>
+                <span class="tieuDe">GỌI NGAY</span>
+                <a href="tel:0904175696" class="thongTin">090.417.5696</a>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bottom-home" ng-controller="categoryProductController">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span style="color:#ff0000;" class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand hidden-lg hidden-md hidden-sm" style="color:#fff" href="@Url.Action("Index","Home")">BIGWIN</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li><a href="/bai-viet/bao-gia-6">Báo giá</a></li>
+                            <li><a href="/danh-muc-san-pham">Sản phẩm</a></li>
+                            <li><a href="/bai-viet/dich-vu-sua-chua-lioa-7">Dịch vụ sửa chữa lioa</a></li>
+                            <li><a href="/bai-viet/trung-tam-bao-hanh-lioa-8">Trung tâm bảo hành lioa</a></li>
+                            <li><a href="/lien-he">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 body">
+        @RenderBody()
+    </div>
+
+    <footer class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 footer">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 left">
+                <a href="@Url.Action("Index","Home")" class="list">Trang chủ</a>
+                <a href="#" class="list">Giới thiệu</a>
+                <a href="/danh-muc-san-pham" class="list">Sản phầm</a>
+                <a href="/danh-muc-bai-viet/tin-tuc-2" class="list">Tin tức</a>
+                <a href="/lien-he" class="list">Liên hệ</a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 right">
+                <a href="tel:0932213699" class="lienHe"><span class="fa fa-phone"></span> 093.221.3699</a>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 thongTin">
+                <img src="~/Content/Front/images/Logo.png" class="img-responsive" />
+                <p class="tenCty">BIGWIN VIETNAM JOINT STOCK COMPANY</p>
+                <p class="diaChi"><span class="fa fa-map-marker"></span> 7/73 - Luong Khanh Thien street - Luong Khanh Thien Ward - Ngo Quyen District - Hai Phong city.</p>
+                <p class="diaChi"><span class="fa fa-phone"></span> <a href="tel:0932213699">093.221.3699</a> - <a href="tel:0904175696">090.417.5696</a></p>
+                <p class="diaChi"><span class="fa fa-envelope-o"></span> <a href="mailto:bigwincompanyvn@gmail.com">bigwincompanyvn@gmail.com</a></p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 banDo">
+                <p class="tieuDe">TÌM CHÚNG TÔI TRÊN BẢN ĐỒ</p>
+                <a href="/lien-he">
+                    <img src="~/Content/Front/images/Map.PNG" class="img-responsive" />
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gioiThieu">
+                <p class="tieuDe">GIỚI THIỆU VỀ CHÚNG TÔI</p>
+                <p class="noiDung">Bigwin Việt Nam là nhà phân phối chính thức của thương hiệu LiOA trên thị trường Hải Phòng từ các thiets bị điện, ổn áp. Qua nhiều năm phát triển bền vững chúng tôi hiểu được giá trị của sự uy tín và xem trọng giá trị ấy, tất cả khách hàng của Bigwin Việt Nam đều hài lòng về dịch vụ, giá cả, hỗ trợ của chúng tôi. Hãy liên hệ chúng tôi ngay để được tư vấn , hỗ trợ , báo giá tốt nhất nhanh nhất !</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--jquery-->
+    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+
+    <!--AngularJS-->
+    @*<script src="~/Scripts/angular.min.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    @*<script src="~/Scripts/angular-sanitize.min.js"></script>*@
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-cookies.min.js"></script>
+
+    <!--Popup tết-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="~/Content/Front/Popup/jquery.popup.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#myModal').popup($('#myModal').data());
+        });
+    </script>
+
+    <!--Message-->
+    <script src="~/Content/admin/js/libs/toastr/toastr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            toastr.options = {
+                "positionClass": "toast-bottom-left"
+            };
+        });
+    </script>
+
+    <!--AngularJS custom-->
+    <script src="~/Scripts/Front/frontApp.js"></script>
+    <script src="~/Scripts/Front/pagination/dirPagination.min.js"></script>
+
+    <!--Loading-->
+    <script src="~/Scripts/loading-spinner/spin.min.js"></script>
+    <script src="~/Scripts/loading-spinner/angular-spinner.min.js"></script>
+    <script src="~/Scripts/loading-spinner/angular-loading-spinner.js"></script>
+
+    <!--Banner-->
+    @*<script src="~/Scripts/Front/bannerController.min.js"></script>*@
+
+    <!--Quảng cáo-->
+    <script src="~/Scripts/front/QCController.min.js"></script>
+
+    <!--Category Post-->
+    <script src="~/Scripts/Front/categoryPostFactory.min.js"></script>
+    <script src="~/Scripts/Front/categoryPostController.min.js"></script>
+
+    <!--Category Product-->
+    <script src="~/Scripts/Front/categoryProductFactory.min.js"></script>
+    <script src="~/Scripts/Front/categoryProductController.min.js"></script>
+
+    <!--Post-->
+    <script src="~/Scripts/Front/postController.min.js"></script>
+
+    <!--Product-->
+    <script src="~/Scripts/Front/productController.min.js"></script>
+
+    <!--Sản phẩm mới-->
+    <script src="~/Scripts/front/newProductController.min.js"></script>
+
+    <!--Search-->
+    <script src="~/Scripts/Front/searchController.min.js"></script>
+
+    <!--Contact-->
+    <script src="~/Scripts/Front/contactController.min.js"></script>
+
+    <!--Order-->
+    <script src="~/Scripts/Front/themOrderController.min.js"></script>
+
+    <!--Image-->
+    @*<script src="~/Scripts/front/imageController.min.js"></script>*@
+
+    <!--Search-->
+    <script src="~/Scripts/Front/searchController.min.js"></script>
+    <script src="~/Scripts/Front/showSearchController.min.js"></script>
+</body>
+</html>

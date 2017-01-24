@@ -72,7 +72,7 @@ namespace CMS.Areas.Admin.Controllers
         [AllowAnonymous]
         public JsonResult Get4FeatureByCategory(int id)
         {
-            var model = db.Product.Where(p => p.idCategoryProduct == id && p.published == 1 && p.feature.Contains("1")).OrderByDescending(p => p.timeModified).Take(4);
+            var model = db.Product.Where(p => p.idCategoryProduct == id && p.published == 1 && p.feature.Contains("1")).OrderByDescending(p => p.timeModified);
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }

@@ -568,5 +568,11 @@
     "inputFiles": [
       "Scripts/front/QCController.js"
     ]
+  },
+  {
+    "outputFileName": "Content/Front/css/Home.min.css",
+    "inputFiles": [
+      "Content/Front/css/Home.css"
+    ]
   }
 ]

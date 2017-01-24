@@ -1,108 +1,73 @@
 ﻿@{
     ViewBag.Title = "Lioa";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 banner">
-    <img src="~/Content/Front/images/Banner.png" class="img-responsive" />
-</div>
-
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 tinMoi" ng-controller="categoryPostController">
-    <p class="tieuDe">TIN TỨC MỚI NHẤT</p>
-    <span us-spinner="{radius:15, width:4, length: 8}"></span>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 item" ng-repeat="(index, value) in tinMois">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 anh">
-            <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 chiTiet">
-            <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" class="tieuDe">{{value.title}}</a>
-            <p class="moTa" ng-bind-html="value.description | limitTo:100"></p>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 home" ng-controller="categoryProductController">
+    <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs leftHome pull-left">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 listSP" ng-repeat="(indexCategoryProduct, valueCategoryProduct) in categoryProducts">
+            <p class="tieuDe">{{valueCategoryProduct.title}}</p>
+            <span us-spinner="{radius:15, width:4, length: 8}"></span>
+            <p ng-hide="valueCategoryProduct.homeProducts.length > 0" style="font-size: 1em;color: #f44336;">Đang cập nhật</p>
+            <ul class="list" ng-show="valueCategoryProduct.homeProducts.length > 0">
+                <li class="item" ng-repeat="(indexProduct, valueProduct) in valueCategoryProduct.homeProducts"><span class="fa fa-hand-o-right"></span> <a href="/san-pham/{{valueProduct.alias}}-{{valueProduct.idProduct}}">{{valueProduct.title}}</a></li>
+            </ul>
         </div>
     </div>
-    <a href="/danh-muc-bai-viet/tin-tuc-2" class="btnXemThem">Xem thêm</a>
-</div>
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" ng-controller="categoryProductController">
-    <input type="hidden" value="1" id="idCategoryProduct" />
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spNoiBat">
-        <p class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-0 col-xs-offset-0 tieuDe">SẢN PHẨM NỔI BẬT</p>
-        <span us-spinner="{radius:15, width:4, length: 8}"></span>
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <p ng-hide="spNoiBats.length > 0" style="font-size: 4em;color: #f44336;">Chưa có sản phẩm nổi bật</p>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox" ng-show="spNoiBats.length > 0">
-                <div class="item active">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 sp" dir-paginate="(index, value) in spNoiBats | itemsPerPage:4">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
-                            <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
-                            <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
-                            <p class="moTa" ng-bind-html="value.description | limitTo:150"></p>
-                            <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnXemThem">Xem thêm</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 sp" dir-paginate="(index, value) in spNoiBats | itemsPerPage:4">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
-                            <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
-                            <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
-                            <p class="moTa" ng-bind-html="value.description | limitTo:150"></p>
-                            <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnXemThem">Xem thêm</a>
-                        </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 centeHome">
+        <img src="~/Content/Front/images/Banner.png" class="img-responsive" />
+        <div class="panel panel-success">
+            <div class="panel-heading">Sản phẩm nổi bật</div>
+            <div class="panel-body">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 sp" dir-paginate="(index, value) in spNoiBats | itemsPerPage:3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
+                        <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
+                        <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
+                        <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnXemThem">Xem thêm</a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+        <div class="panel panel-success">
+            <div class="panel-heading">Sản phẩm mới</div>
+            <div class="panel-body">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 sp" ng-repeat="(index, value) in spMoiHomes">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung">
+                        <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
+                        <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
+                        <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnXemThem">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 left pull-left">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spTieuBieu" ng-repeat="(indexCategoryProduct, valueCategoryProduct) in categoryProducts">
-            <p class="tieuDe text-uppercase">{{valueCategoryProduct.title}}</p>
+    <div class="hidden-lg hidden-md hidden-sm col-xs-12 leftHome" ng-controller="categoryProductController">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 listSP" ng-repeat="(indexCategoryProduct, valueCategoryProduct) in categoryProducts">
+            <p class="tieuDe">{{valueCategoryProduct.title}}</p>
             <span us-spinner="{radius:15, width:4, length: 8}"></span>
             <p ng-hide="valueCategoryProduct.homeProducts.length > 0" style="font-size: 3em;color: #f44336;">Đang cập nhật</p>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 item" ng-repeat="(indexProduct, valueProduct) in valueCategoryProduct.homeProducts" ng-show="valueCategoryProduct.homeProducts.length > 0">
-                <img ng-src="{{valueProduct.image}}" class="img-responsive" />
-                <a href="/san-pham/{{valueProduct.alias}}-{{valueProduct.idProduct}}" class="tieuDe">{{valueProduct.title}}</a>
-                <p class="moTa" ng-bind-html="valueProduct.description"></p>
-                <p class="gia" ng-show="valueProduct.price > 0"><span>Giá: </span>{{valueProduct.price | number:0}} đ</p>
-                <p class="gia" ng-hide="valueProduct.price > 0"><span>Giá: </span>Liên hệ</p>
-                <a href="/san-pham/{{valueProduct.alias}}-{{valueProduct.idProduct}}" class="btnDatHang">Chi tiết</a>
-            </div>
-            <a href="/danh-muc-san-pham/{{valueCategoryProduct.alias}}-{{valueCategoryProduct.idCategory}}" class="btnXemThem">Xem thêm <span class="fa fa-angle-double-right"></span></a>
+            <ul class="list" ng-show="valueCategoryProduct.homeProducts.length > 0">
+                <li class="item" ng-repeat="(indexProduct, valueProduct) in valueCategoryProduct.homeProducts"><span class="fa fa-hand-o-right"></span> <a href="/san-pham/{{valueProduct.alias}}-{{valueProduct.idProduct}}" class="tieuDe">{{valueProduct.title}}</a></li>
+            </ul>
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 right pull-left">
-        <p class="tieuDe">TIN TỨC NỔI BẬT</p>
-        <span us-spinner="{radius:15, width:4, length: 8}"></span>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tin" ng-repeat="(index, value) in tinNoiBats1">
+    <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs rightHome pull-right">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 listBV">
+            <p class="tieuDe">TIN TỨC NỔI BẬT</p>
             <span us-spinner="{radius:15, width:4, length: 8}"></span>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 left">
-                <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 right">
-                <a href="/bai-viet/{{value.alias}}-{{value.idPost}}" class="tieuDe">{{value.title}}</a>
-                <p class="moTa" ng-bind-html="value.description | limitTo:200"></p>
-            </div>
+            <p ng-hide="tinNoiBats1.length > 0" style="font-size: 1em;color: #f44336;">Đang cập nhật</p>
+            <ul class="list" ng-show="tinNoiBats1.length > 0">
+                <li class="item" ng-repeat="(index, value) in tinNoiBats1"><span class="fa fa-angle-double-right"></span> <a href="/bai-viet/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a></li>
+            </ul>
         </div>
+        
 
-        <a href="/danh-muc-bai-viet/tin-tuc-2" class="btnXemThem">Xem thêm</a>
-    </div>
-
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 right pull-left">
         <img src="~/Content/Front/images/TuVan.png" class="img-responsive" />
-    </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 right pull-right">
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F%25E1%25BB%2594n-%25C3%25A1p-lioa-H%25E1%25BA%25A3i-Ph%25C3%25B2ng-370229273357560%2F%3F__mref%3Dmessage_bubble&tabs=timeline&width=800&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F%25E1%25BB%2594n-%25C3%25A1p-lioa-H%25E1%25BA%25A3i-Ph%25C3%25B2ng-370229273357560%2F%3F__mref%3Dmessage_bubble&tabs=timeline&width=300&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
     </div>
 </div>

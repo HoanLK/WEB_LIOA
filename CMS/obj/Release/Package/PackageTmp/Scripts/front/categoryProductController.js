@@ -5,6 +5,7 @@
     $scope.product = {};
     $scope.spNoiBats = [];
     $scope.spKhac = [];
+    $scope.spMoiHomes = [];
 
     $scope.tinNoiBats1 = [];
 
@@ -48,6 +49,12 @@
     $http.get('/API/ProductsAPI?att=idCategoryProduct&&value=' + $scope.idCategoryProduct)
     .success(function (products) {
         $scope.products = products;
+    });
+
+    //Danh sách sản phẩm mới trang chủ
+    $http.get('/API/ProductsAPI?att=spMoiHome&&value=0')
+    .success(function (products) {
+        $scope.spMoiHomes = products;
     });
 
     //Sản phẩm khác

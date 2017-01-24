@@ -2264,6 +2264,10 @@
     <Content Include="Content\Front\css\BaiViet.min.min.css">
       <DependentUpon>BaiViet.min.css</DependentUpon>
     </Content>
+    <Content Include="Content\Front\css\Home.css" />
+    <Content Include="Content\Front\css\Home.min.css">
+      <DependentUpon>Home.css</DependentUpon>
+    </Content>
     <Content Include="Content\Front\css\SanPham.css" />
     <Content Include="Content\Front\css\SanPham.min.css">
       <DependentUpon>SanPham.css</DependentUpon>
@@ -2272,6 +2276,7 @@
     <Content Include="Content\Front\css\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
+    <Content Include="Content\Front\images\background-top.png" />
     <Content Include="Content\Front\images\Banner San Pham.png" />
     <Content Include="Content\Front\images\banner Tin tuc.png" />
     <Content Include="Content\Front\images\Banner.png" />
@@ -2305,6 +2310,8 @@
     <Content Include="Content\Images\images\DanhMucTin.png" />
     <Content Include="Content\Images\images\Lioa1Pha.png" />
     <Content Include="Content\Images\images\Lioa3PhaKho.png" />
+    <Content Include="Content\Images\images\QC.png" />
+    <Content Include="Content\Images\images\Quang cao\qc.jpg" />
     <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-102-100KVA.jpg" />
     <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-103-1000KVA.jpg" />
     <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-162-160KVA.jpg" />
@@ -2324,6 +2331,11 @@
     <Content Include="Content\Images\images\San pham\on ap 1 pha\Ổn Áp LiOA 1 kVA SH-1000.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRI-2000.JPG" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRII-2000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 2 kVA SH-2000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 3 kVA DRII-3000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 3 kVA SH-3000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 3kVA DRI-3000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 5 kVA DRII-5000.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA 200KVA-SH3.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA DR3 - 30KVA.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 3 pha\LIOA DR3 - 45KVA.jpg" />
@@ -2342,6 +2354,8 @@
     <Content Include="Content\Images\_thumbs\Images\DanhMucTin.png" />
     <Content Include="Content\Images\_thumbs\Images\Lioa1Pha.png" />
     <Content Include="Content\Images\_thumbs\Images\Lioa3PhaKho.png" />
+    <Content Include="Content\Images\_thumbs\Images\QC.png" />
+    <Content Include="Content\Images\_thumbs\Images\Quang cao\qc.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-102-100KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-103-1000KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-162-160KVA.jpg" />
@@ -2361,6 +2375,11 @@
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\Ổn Áp LiOA 1 kVA SH-1000.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRI-2000.JPG" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\Ổn Áp LiOA 2 kVA DRII-2000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 2 kVA SH-2000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 3 kVA DRII-3000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 3 kVA SH-3000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 3kVA DRI-3000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 5 kVA DRII-5000.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA 200KVA-SH3.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA DR3 - 30KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA DR3 - 45KVA.jpg" />
@@ -2963,6 +2982,8 @@
     <None Include="Properties\PublishProfiles\lioa.pubxml" />
     <Content Include="Views\Shared\_PopTet.cshtml" />
     <Content Include="Views\Shared\_QC.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Shared\_Temp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
