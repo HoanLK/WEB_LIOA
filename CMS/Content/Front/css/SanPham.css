@@ -83,11 +83,12 @@
             }
 
                 .body > .spMoi > .slide > .carousel-inner > .item > .sp {
-                    padding: 1em;
+                    padding: 1em 0em;
                 }
 
                     .body > .spMoi > .slide > .carousel-inner > .item > .sp > .khung {
-                        height: 29em;
+                        padding:1em;
+                        height: 23em;
                     }
 
                         .body > .spMoi > .slide > .carousel-inner > .item > .sp > .khung:hover {
@@ -209,11 +210,12 @@
     }
 
     .body > .sanPham > .item {
-        padding: 1em;
+        padding: 1em 0;
     }
 
         .body > .sanPham > .item > .khung {
-            height: 29em;
+            padding:1em;
+            height: 24em;
         }
 
             .body > .sanPham > .item > .khung:hover {

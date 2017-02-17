@@ -2287,6 +2287,7 @@
     <Content Include="Content\Front\images\icon.png" />
     <Content Include="Content\Front\images\Lioa1Pha.png" />
     <Content Include="Content\Front\images\Lioa3PhaKho.png" />
+    <Content Include="Content\Front\images\logo-lioa.png" />
     <Content Include="Content\Front\images\Logo.png" />
     <Content Include="Content\Front\images\LogoNho.png" />
     <Content Include="Content\Front\images\Map.PNG" />

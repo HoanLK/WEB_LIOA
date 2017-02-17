@@ -13,8 +13,8 @@
         </div>
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 right pull-right">
             <p class="tieuDe">{{product.title}}</p>
-            <p class="gia" ng-show="product.price.length > 0"><span>Đơn giá: </span>{{product.price}}</p>
-            <p class="gia" ng-hide="product.price.length > 0">Liên hệ</p>
+            <p class="gia" ng-show="product.price > 0"><span>Đơn giá: </span>{{product.price | number:0}} đ</p>
+            <p class="gia" ng-hide="product.price > 0">Liên hệ</p>
             <button class="btnDatHang" data-toggle="modal" data-target="#datHang">Đặt hàng</button>
             <div class="chucNang" ng-bind-html="product.description"></div>
         </div>

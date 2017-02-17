@@ -14,8 +14,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung ">
                         <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
                         <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
-                        <p class="moTa" ng-bind-html="value.description | limitTo:100"></p>
-                        <p class="gia" ng-show="value.price != null"><span>Giá: </span>{{value.price}}</p>
+                        @*<p class="moTa" ng-bind-html="value.description | limitTo:100"></p>*@
+                        <p class="gia" ng-show="value.price != null"><span>Giá: </span>{{value.price | number:0}} đ</p>
                         <p class="gia" ng-hide="value.price != null"><span>Giá: </span>Liên hệ</p>
                         <button class="btnDatHang">Đặt hàng</button>
                     </div>
@@ -26,8 +26,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 khung ">
                         <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
                         <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
-                        <p class="moTa" ng-bind-html="value.description | limitTo:100"></p>
-                        <p class="gia" ng-show="value.price != null"><span>Giá: </span>{{value.price}}</p>
+                        @*<p class="moTa" ng-bind-html="value.description | limitTo:100"></p>*@
+                        <p class="gia" ng-show="value.price != null"><span>Giá: </span>{{value.price | number:0}} đ</p>
                         <p class="gia" ng-hide="value.price != null"><span>Giá: </span>Liên hệ</p>
                         <button class="btnDatHang">Đặt hàng</button>
                     </div>
