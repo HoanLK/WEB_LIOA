@@ -26,6 +26,7 @@ namespace CMS.Models
         public string note { get; set; }
         public string description { get; set; }
         public Nullable<double> price { get; set; }
+        public Nullable<int> km { get; set; }
         public Nullable<int> published { get; set; }
         public string image { get; set; }
         public string tags { get; set; }

@@ -19,7 +19,6 @@
                             $scope.relatedPosts.push(value);
                         };
                     });
-                    console.log($scope.relatedPosts);
                 });
         });
 }]);

@@ -4,6 +4,7 @@
 }
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 home" ng-controller="categoryProductController">
+    <input type="hidden" value="1" id="idCategoryProduct" />
     <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs leftHome pull-left">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 listSP" ng-repeat="(indexCategoryProduct, valueCategoryProduct) in categoryProducts">
             <p class="tieuDe">{{valueCategoryProduct.title}}</p>
@@ -25,6 +26,7 @@
                         <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
                         <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
                         <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnXemThem">Xem thêm</a>
+                        <img src="~/Content/Front/images/123454.gif" class="km" ng-show="value.km > 0"/>
                     </div>
                 </div>
             </div>
@@ -38,13 +40,14 @@
                         <img ng-src="{{value.image}}" class="img-responsive" alt="{{value.title}}" />
                         <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="tieuDe">{{value.title}}</a>
                         <a href="/san-pham/{{value.alias}}-{{value.idProduct}}" class="btnXemThem">Xem thêm</a>
+                        <img src="~/Content/Front/images/123454.gif" class="km" ng-show="value.km > 0" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="hidden-lg hidden-md hidden-sm col-xs-12 leftHome" ng-controller="categoryProductController">
+    <div class="hidden-lg hidden-md hidden-sm col-xs-12 leftHome">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 listSP" ng-repeat="(indexCategoryProduct, valueCategoryProduct) in categoryProducts">
             <p class="tieuDe">{{valueCategoryProduct.title}}</p>
             <span us-spinner="{radius:15, width:4, length: 8}"></span>

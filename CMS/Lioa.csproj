@@ -188,8 +188,6 @@
     <Folder Include="bower_components\sweetalert\" />
     <Folder Include="Content\admin\js\core\cache\" />
     <Folder Include="Content\Front\fonts\" />
-    <Folder Include="Content\Images\files\" />
-    <Folder Include="Content\Images\_thumbs\Files\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -2276,6 +2274,7 @@
     <Content Include="Content\Front\css\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
+    <Content Include="Content\Front\images\123454.gif" />
     <Content Include="Content\Front\images\background-top.png" />
     <Content Include="Content\Front\images\Banner San Pham.png" />
     <Content Include="Content\Front\images\banner Tin tuc.png" />
@@ -2305,6 +2304,22 @@
     <Content Include="Content\Front\Popup\pop.jpg" />
     <Content Include="Content\Front\Popup\popup.css" />
     <Content Include="Content\Front\Popup\popup.min.css" />
+    <Content Include="Content\Images\files\1%281%29.jpg" />
+    <Content Include="Content\Images\files\1%282%29.jpg" />
+    <Content Include="Content\Images\files\1%283%29.jpg" />
+    <Content Include="Content\Images\files\1.jpg" />
+    <Content Include="Content\Images\files\2.JPG" />
+    <Content Include="Content\Images\files\5.jpg" />
+    <Content Include="Content\Images\files\6.jpg" />
+    <Content Include="Content\Images\files\a.jpg" />
+    <Content Include="Content\Images\files\b.JPG" />
+    <Content Include="Content\Images\files\c.JPG" />
+    <Content Include="Content\Images\files\f%281%29.jpg" />
+    <Content Include="Content\Images\files\f.JPG" />
+    <Content Include="Content\Images\files\h.JPG" />
+    <Content Include="Content\Images\files\n.jpg" />
+    <Content Include="Content\Images\files\s.JPG" />
+    <Content Include="Content\Images\files\v.jpg" />
     <Content Include="Content\Images\images\BienApDienLuc.png" />
     <Content Include="Content\Images\images\BienApLioa.png" />
     <Content Include="Content\Images\images\ChiTietSP.png" />
@@ -2321,12 +2336,15 @@
     <Content Include="Content\Images\images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 60KVA.jpg" />
     <Content Include="Content\Images\images\San pham\bien ap lioa\biến áp tự ngẫu 10kv.jpg" />
     <Content Include="Content\Images\images\San pham\LIOA 1.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\drii 7,5.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRI 30 KVA.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRI-1000.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRII-20KVA.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\LIOA DRII.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\lioa-dri-10kva.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\lioa-dri-15kva.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\on-ap-lioa-5kva-dri-5000.jpg" />
+    <Content Include="Content\Images\images\San pham\on ap 1 pha\SH5000.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 0,5 kVA SH-500.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\ỔN ÁP LiOA 1 kVA DRI-1000.jpg" />
     <Content Include="Content\Images\images\San pham\on ap 1 pha\Ổn Áp LiOA 1 kVA SH-1000.jpg" />
@@ -2349,6 +2367,21 @@
     <Content Include="Content\Images\images\TIN TUC\on nap la gi\lioa.jpg" />
     <Content Include="Content\Images\images\TIN TUC\tu vung ky thuat cong nghiep-500x300.jpg" />
     <Content Include="Content\Images\images\TinTuc.png" />
+    <Content Include="Content\Images\_thumbs\Files\1%281%29.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\1%282%29.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\1%283%29.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\1.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\2.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\5.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\6.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\a.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\b.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\c.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\f%281%29.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\f.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\h.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\n.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\s.JPG" />
     <Content Include="Content\Images\_thumbs\Images\BienApDienLuc.png" />
     <Content Include="Content\Images\_thumbs\Images\BienApLioa.png" />
     <Content Include="Content\Images\_thumbs\Images\ChiTietSP.png" />
@@ -2365,12 +2398,15 @@
     <Content Include="Content\Images\_thumbs\Images\San pham\bien ap lioa\BIẾN ÁP CÁCH LY 60KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\bien ap lioa\biến áp tự ngẫu 10kv.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\LIOA 1.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\drii 7,5.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRI 30 KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRI-1000.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRII-20KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\LIOA DRII.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\lioa-dri-10kva.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\lioa-dri-15kva.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\on-ap-lioa-5kva-dri-5000.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\SH5000.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 0,5 kVA SH-500.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\ỔN ÁP LiOA 1 kVA DRI-1000.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\on ap 1 pha\Ổn Áp LiOA 1 kVA SH-1000.jpg" />

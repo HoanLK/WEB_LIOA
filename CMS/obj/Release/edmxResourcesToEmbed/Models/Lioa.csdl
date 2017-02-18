@@ -8,6 +8,7 @@
     <EntitySet Name="Order" EntityType="LioaModel.Order" />
     <EntitySet Name="Post" EntityType="LioaModel.Post" />
     <EntitySet Name="Product" EntityType="LioaModel.Product" />
+    <EntitySet Name="QC" EntityType="LioaModel.QC" />
     <EntitySet Name="User" EntityType="LioaModel.User" />
     <EntitySet Name="webpages_Membership" EntityType="LioaModel.webpages_Membership" />
     <EntitySet Name="webpages_OAuthMembership" EntityType="LioaModel.webpages_OAuthMembership" />
@@ -24,7 +25,6 @@
       <End Role="webpages_Roles" EntitySet="webpages_Roles" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
-    <EntitySet Name="QC" EntityType="LioaModel.QC" />
   </EntityContainer>
   <EntityType Name="Banner">
     <Key>
@@ -158,6 +158,7 @@
     <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="price" Type="Double" />
+    <Property Name="km" Type="Int32" />
     <Property Name="published" Type="Int32" />
     <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -168,6 +169,15 @@
     <Property Name="metakewords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="robots" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="QC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -238,13 +248,4 @@
     <End Type="LioaModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
     <End Type="LioaModel.User" Role="User" Multiplicity="*" />
   </Association>
-  <EntityType Name="QC">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
 </Schema>

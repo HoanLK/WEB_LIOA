@@ -12,14 +12,14 @@
         <EntityTypeShape EntityType="LioaModel.Order" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="LioaModel.Post" Width="1.5" PointX="2.75" PointY="7.75" />
         <EntityTypeShape EntityType="LioaModel.Product" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.QC" Width="1.5" PointX="6.75" PointY="7.75" />
         <EntityTypeShape EntityType="LioaModel.User" Width="1.5" PointX="7" PointY="0.875" />
-        <EntityTypeShape EntityType="LioaModel.webpages_Membership" Width="1.5" PointX="6.75" PointY="7.75" />
-        <EntityTypeShape EntityType="LioaModel.webpages_OAuthMembership" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LioaModel.webpages_Membership" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LioaModel.webpages_OAuthMembership" Width="1.5" PointX="8.75" PointY="7.75" />
         <EntityTypeShape EntityType="LioaModel.webpages_Roles" Width="1.5" PointX="4.75" PointY="0.875" />
         <AssociationConnector Association="LioaModel.FK_Category_Category" />
         <AssociationConnector Association="LioaModel.FK_CategoryProduct_CategoryProduct" />
         <AssociationConnector Association="LioaModel.webpages_UsersInRoles" />
-        <EntityTypeShape EntityType="LioaModel.QC" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -87,7 +87,7 @@
                 }
 
                     .body > .spMoi > .slide > .carousel-inner > .item > .sp > .khung {
-                        padding:1em;
+                        padding: 1em;
                         height: 23em;
                     }
 
@@ -97,7 +97,7 @@
 
                         .body > .spMoi > .slide > .carousel-inner > .item > .sp > .khung > img {
                             width: 100%;
-                            height:12em;
+                            height: 12em;
                             border: solid 1px rgba(0,0,0,0.16);
                         }
 
@@ -146,6 +146,16 @@
                                 box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
                             }
 
+                        .body > .spMoi > .slide > .carousel-inner > .item > .sp > .khung > .km {
+                            position: absolute;
+                            overflow: visible;
+                            top: -3%;
+                            right: -3%;
+                            width: 5em;
+                            height: 5em;
+                            border: none;
+                        }
+
 .body > .tinNoiBat {
     margin: 2em 0;
 }
@@ -170,7 +180,7 @@
                 }
 
                 .body > .tinNoiBat > .tin > .item > .khung > .left {
-                    padding:0;
+                    padding: 0;
                 }
 
                     .body > .tinNoiBat > .tin > .item > .khung > .left > img {
@@ -214,7 +224,7 @@
     }
 
         .body > .sanPham > .item > .khung {
-            padding:1em;
+            padding: 1em;
             height: 24em;
         }
 
@@ -224,7 +234,7 @@
 
             .body > .sanPham > .item > .khung > img {
                 width: 100%;
-                height:12em;
+                height: 12em;
                 border: solid 1px rgba(0,0,0,0.16);
             }
 
@@ -269,6 +279,16 @@
                     background-color: #F44336;
                     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
                 }
+
+            .body > .sanPham > .item > .khung > .km {
+                position: absolute;
+                overflow: visible;
+                top: -3%;
+                right: -3%;
+                width: 5em;
+                height: 5em;
+                border: none;
+            }
 
     .body > .sanPham > .phanTrang {
         text-align: center;
@@ -419,5 +439,4 @@
 
 /*table*/
 @media (min-width: 767px) and (max-width: 992px) {
-    
 }

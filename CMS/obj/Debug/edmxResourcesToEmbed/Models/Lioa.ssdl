@@ -128,6 +128,7 @@
     <Property Name="note" Type="nvarchar(max)" />
     <Property Name="description" Type="ntext" />
     <Property Name="price" Type="float" />
+    <Property Name="km" Type="int" />
     <Property Name="published" Type="int" />
     <Property Name="image" Type="nvarchar(max)" />
     <Property Name="tags" Type="nvarchar(max)" />

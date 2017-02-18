@@ -65,14 +65,14 @@
             .home > .centeHome > .panel-success > .panel-heading {
                 background-color: #f44336;
                 color: #fff;
-                text-transform:uppercase;
+                text-transform: uppercase;
                 font-size: 1.2em;
                 text-align: center;
-                padding:0.3em;
+                padding: 0.3em;
             }
 
             .home > .centeHome > .panel-success > .panel-body {
-                padding:0.5em;
+                padding: 0.5em;
             }
 
                 .home > .centeHome > .panel-success > .panel-body > .sp {
@@ -82,8 +82,8 @@
                     .home > .centeHome > .panel-success > .panel-body > .sp > .khung {
                         height: 18em;
                         padding: 0;
-                        border:1px solid #ff9100;
-                        border-radius:10px;
+                        border: 1px solid #ff9100;
+                        border-radius: 10px;
                     }
 
                         .home > .centeHome > .panel-success > .panel-body > .sp > .khung:hover {
@@ -93,36 +93,45 @@
                         .home > .centeHome > .panel-success > .panel-body > .sp > .khung > img {
                             height: 10em;
                             margin: 0 auto;
-                            padding:0.5em 0.5em 0 0.5em;
-                            border-radius:10px 10px 0 0;
+                            padding: 0.5em 0.5em 0 0.5em;
+                            border-radius: 10px 10px 0 0;
                         }
 
                         .home > .centeHome > .panel-success > .panel-body > .sp > .khung > .tieuDe {
                             display: flex;
                             text-align: center;
-                            color:#f44336;
-                            font-weight:700;
-                            margin-top:1em;
-                            padding:0 0.5em;
+                            color: #f44336;
+                            font-weight: 700;
+                            margin-top: 1em;
+                            padding: 0 0.5em;
                         }
 
                         .home > .centeHome > .panel-success > .panel-body > .sp > .khung > .btnXemThem {
-                            position:absolute;
-                            overflow:hidden;
-                            left:20%;
-                            right:20%;
-                            bottom:5%;
-                            padding:0.3em 0.7em;
-                            background-color:#ff6d00;
-                            color:#fff;
-                            border-radius:5px;
-                            text-align:center;
+                            position: absolute;
+                            overflow: hidden;
+                            left: 20%;
+                            right: 20%;
+                            bottom: 5%;
+                            padding: 0.3em 0.7em;
+                            background-color: #ff6d00;
+                            color: #fff;
+                            border-radius: 5px;
+                            text-align: center;
                         }
 
                             .home > .centeHome > .panel-success > .panel-body > .sp > .khung > .btnXemThem:hover {
-                                text-decoration:none;
-                                background-color:#07b22b;
+                                text-decoration: none;
+                                background-color: #07b22b;
                             }
+
+                        .home > .centeHome > .panel-success > .panel-body > .sp > .khung > .km {
+                            position:absolute;
+                            overflow:visible;
+                            top:-10%;
+                            right:-10%;
+                            width:5em;
+                            height:5em;
+                        }
 
     .home > .rightHome {
     }

@@ -68,6 +68,7 @@
                     metakewords: data.metakewords,
                     author: data.author,
                     robots: data.robots,
+                    km: data.km,
                 };
                 //Giá trị cho Danh mục
                 $scope.category = { id: data.idCategoryProduct };
@@ -77,6 +78,7 @@
         //Không thì thiết lập giá trị mặc định
     else {
         $scope.product = {
+            km:0,
             published: 1,
             feature: '0',
             robots: 'Index, Follow',

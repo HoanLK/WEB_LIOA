@@ -78,9 +78,18 @@
                                 
                                 <form class="form" role="form">
                                     <div class="form-group">
-                                        <label for="price">Giá</label>
                                         <input type="text" class="form-control" id="price" name="price" ng-model="product.price" />
+                                        <label for="price">Giá</label>
                                     </div>
+
+                                    <div class="form-group ">
+                                        <select id="status" name="km" class="form-control" ng-model="product.km">
+                                            <option value="1" ng-selected="product.km == 1">Có khuyến mại</option>
+                                            <option value="0" ng-selected="product.km == 0">Không khuyến mại</option>
+                                        </select>
+                                        <label for="km">Khuyến mại</label>
+                                    </div>
+
                                     <div class="form-group ">
                                         <select id="category" name="category"
                                                 ng-model="category"
@@ -94,7 +103,7 @@
                                             <option value="1" ng-selected="product.published == 1">Xuất bản</option>
                                             <option value="0" ng-selected="product.published == 0">Không xuất bản</option>
                                         </select>
-                                        <label for="status">Trạng thái</label>
+                                        <label for="published">Trạng thái</label>
                                     </div>
                                     <div class="form-group ">
                                         <select id="feature" name="feature" class="form-control" ng-model="product.feature">

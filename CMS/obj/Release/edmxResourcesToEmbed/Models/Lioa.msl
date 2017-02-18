@@ -132,6 +132,7 @@
           <ScalarProperty Name="tags" ColumnName="tags" />
           <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="published" ColumnName="published" />
+          <ScalarProperty Name="km" ColumnName="km" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="note" ColumnName="note" />
@@ -144,6 +145,16 @@
           <ScalarProperty Name="idUserCreated" ColumnName="idUserCreated" />
           <ScalarProperty Name="idCategoryProduct" ColumnName="idCategoryProduct" />
           <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QC">
+      <EntityTypeMapping TypeName="LioaModel.QC">
+        <MappingFragment StoreEntitySet="QC">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -197,15 +208,5 @@
         <ScalarProperty Name="RoleId" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="QC">
-      <EntityTypeMapping TypeName="LioaModel.QC">
-        <MappingFragment StoreEntitySet="QC">
-          <ScalarProperty Name="image" ColumnName="image" />
-          <ScalarProperty Name="link" ColumnName="link" />
-          <ScalarProperty Name="title" ColumnName="title" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

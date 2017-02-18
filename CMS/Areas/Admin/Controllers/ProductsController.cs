@@ -53,7 +53,7 @@ namespace CMS.Areas.Admin.Controllers
             {
                 if (category.idCategory != id)
                 {
-                    var products = db.Product.Where(p => p.idCategoryProduct == category.idCategory).OrderByDescending(p => p.timeModified).Take(2);
+                    var products = db.Product.Where(p => p.idCategoryProduct == category.idCategory).OrderByDescending(p => p.timeModified).Take(6);
                     model.AddRange(products);
                 }
             }

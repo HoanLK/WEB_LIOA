@@ -32,10 +32,10 @@ namespace CMS.Models
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<Post> Post { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<QC> QC { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<webpages_Membership> webpages_Membership { get; set; }
         public virtual DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public virtual DbSet<webpages_Roles> webpages_Roles { get; set; }
-        public virtual DbSet<QC> QC { get; set; }
     }
 }

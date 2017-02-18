@@ -77,3 +77,5 @@ D:\Project\KNT\WebsiteLioa\CMS\Content\Images\_thumbs\Images\Lioa3PhaKho.png|459
 D:\Project\KNT\WebsiteLioa\CMS\Content\Images\_thumbs\Images\SanPham.png|5127
 D:\Project\KNT\WebsiteLioa\CMS\Content\Images\images\QC.png|33551
 D:\Project\KNT\WebsiteLioa\CMS\Content\Images\_thumbs\Images\TinTuc.png|3719
+D:\Project\KNT\WebsiteLioa\CMS\Content\Images\_thumbs\Images\San pham\on ap 3 pha\LIOA DR3 - 30KVA.jpg|1647
+D:\Project\KNT\WebsiteLioa\CMS\Content\Images\_thumbs\Images\QC.png|2909

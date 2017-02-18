@@ -777,14 +777,14 @@
     }
 
     .header>.mid>.thongTinChinh>.tenCty{
-        margin-top:0.5em;
+        margin-top:0.3em;
         font-size:1.2em;
         margin-bottom:0;
     }
 
     .header>.mid>.thongTinChinh>.thongTin{
         font-size:1em;
-        margin:0;
+        margin-bottom:0.4em;
     }
 
     .body > .main > .spNoiBat > .tieuDe {
