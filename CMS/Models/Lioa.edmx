@@ -66,6 +66,14 @@
           <Property Name="robots" Type="varchar" MaxLength="50" />
           <Property Name="image_banner" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="ClientAccess">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ipClient" Type="varchar" MaxLength="50" />
+          <Property Name="time" Type="date" />
+        </EntityType>
         <EntityType Name="Contact">
           <Key>
             <PropertyRef Name="idContact" />
@@ -253,6 +261,7 @@
           <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoryProduct" EntityType="Self.CategoryProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientAccess" EntityType="Self.ClientAccess" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
@@ -288,6 +297,7 @@
           <EntitySet Name="Banner" EntityType="LioaModel.Banner" />
           <EntitySet Name="Category" EntityType="LioaModel.Category" />
           <EntitySet Name="CategoryProduct" EntityType="LioaModel.CategoryProduct" />
+          <EntitySet Name="ClientAccess" EntityType="LioaModel.ClientAccess" />
           <EntitySet Name="Contact" EntityType="LioaModel.Contact" />
           <EntitySet Name="Order" EntityType="LioaModel.Order" />
           <EntitySet Name="Post" EntityType="LioaModel.Post" />
@@ -374,6 +384,14 @@
           <Property Name="image_banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CategoryProduct1" Relationship="LioaModel.FK_CategoryProduct_CategoryProduct" FromRole="CategoryProduct" ToRole="CategoryProduct1" />
           <NavigationProperty Name="CategoryProduct2" Relationship="LioaModel.FK_CategoryProduct_CategoryProduct" FromRole="CategoryProduct1" ToRole="CategoryProduct" />
+        </EntityType>
+        <EntityType Name="ClientAccess">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ipClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -599,6 +617,15 @@
                 <ScalarProperty Name="idUserCreated" ColumnName="idUserCreated" />
                 <ScalarProperty Name="idCategoryParent" ColumnName="idCategoryParent" />
                 <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientAccess">
+            <EntityTypeMapping TypeName="LioaModel.ClientAccess">
+              <MappingFragment StoreEntitySet="ClientAccess">
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="ipClient" ColumnName="ipClient" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

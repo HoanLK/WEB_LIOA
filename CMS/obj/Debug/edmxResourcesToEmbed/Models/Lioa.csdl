@@ -4,6 +4,7 @@
     <EntitySet Name="Banner" EntityType="LioaModel.Banner" />
     <EntitySet Name="Category" EntityType="LioaModel.Category" />
     <EntitySet Name="CategoryProduct" EntityType="LioaModel.CategoryProduct" />
+    <EntitySet Name="ClientAccess" EntityType="LioaModel.ClientAccess" />
     <EntitySet Name="Contact" EntityType="LioaModel.Contact" />
     <EntitySet Name="Order" EntityType="LioaModel.Order" />
     <EntitySet Name="Post" EntityType="LioaModel.Post" />
@@ -90,6 +91,14 @@
     <Property Name="image_banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CategoryProduct1" Relationship="LioaModel.FK_CategoryProduct_CategoryProduct" FromRole="CategoryProduct" ToRole="CategoryProduct1" />
     <NavigationProperty Name="CategoryProduct2" Relationship="LioaModel.FK_CategoryProduct_CategoryProduct" FromRole="CategoryProduct1" ToRole="CategoryProduct" />
+  </EntityType>
+  <EntityType Name="ClientAccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ipClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="time" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>

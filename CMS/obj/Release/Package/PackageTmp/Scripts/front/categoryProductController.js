@@ -77,6 +77,24 @@
     .success(function (posts) {
         $scope.tinNoiBats1 = posts;
     });
+
+    //Lấy số lượng truy cập hôm nay
+    $http.get('/AccessCounter/GetCountDay')
+        .success(function (countDay) {
+            $scope.accessCountDay = countDay;
+        });
+
+    //Lấy số lượng truy cập hôm nay
+    $http.get('/AccessCounter/GetCountMonth')
+        .success(function (countMonth) {
+            $scope.accessCountMonth = countMonth;
+        });
+
+    //Lấy số lượng truy cập hôm nay
+    $http.get('/AccessCounter/GetCountMonthBefore')
+        .success(function (MonthBefore) {
+            $scope.accessCountMonthBefore = MonthBefore;
+        });
     
 //FUNCTION
     function CutString(input, limit) {

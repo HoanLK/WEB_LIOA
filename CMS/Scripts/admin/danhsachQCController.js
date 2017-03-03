@@ -51,7 +51,7 @@
             enableFiltering: false,
             width: 100,
             enableCellEdit: false,
-            cellTemplate: '<div ><button style="margin-left: 10px; margin-top: 3px;" class="btn btn-xs btn-info" ng-click="grid.appScope.EditQC(row.entity.id)"><span class="fa fa-edit"></span></button><button style="margin-left: 10px; margin-top: 3px;" class="btn btn-xs btn-danger" ng-click="grid.appScope.DeleteQC(row.entity.id)"><span class="fa fa-bitbucket"></span></button></div>',
+            cellTemplate: '<div ><button style="margin-left: 10px; margin-top: 3px;" class="btn btn-xs btn-info" ng-click="grid.appScope.EditQC(row.entity.id)"><span class="fa fa-edit"></span></button></div>',
         }
     ];
 

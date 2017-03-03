@@ -8,14 +8,15 @@
         <EntityTypeShape EntityType="LioaModel.Banner" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="LioaModel.Category" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="LioaModel.CategoryProduct" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="LioaModel.Contact" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="LioaModel.Order" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="LioaModel.Post" Width="1.5" PointX="2.75" PointY="7.75" />
-        <EntityTypeShape EntityType="LioaModel.Product" Width="1.5" PointX="4.75" PointY="7.75" />
-        <EntityTypeShape EntityType="LioaModel.QC" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.ClientAccess" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="LioaModel.Contact" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LioaModel.Order" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.Post" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.Product" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.QC" Width="1.5" PointX="8.75" PointY="3.75" />
         <EntityTypeShape EntityType="LioaModel.User" Width="1.5" PointX="7" PointY="0.875" />
-        <EntityTypeShape EntityType="LioaModel.webpages_Membership" Width="1.5" PointX="8.75" PointY="3.75" />
-        <EntityTypeShape EntityType="LioaModel.webpages_OAuthMembership" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LioaModel.webpages_Membership" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="LioaModel.webpages_OAuthMembership" Width="1.5" PointX="9.75" PointY="0.75" />
         <EntityTypeShape EntityType="LioaModel.webpages_Roles" Width="1.5" PointX="4.75" PointY="0.875" />
         <AssociationConnector Association="LioaModel.FK_Category_Category" />
         <AssociationConnector Association="LioaModel.FK_CategoryProduct_CategoryProduct" />

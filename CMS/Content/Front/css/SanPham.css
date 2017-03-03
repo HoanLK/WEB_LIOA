@@ -88,7 +88,7 @@
 
                     .body > .spMoi > .slide > .carousel-inner > .item > .sp > .khung {
                         padding: 1em;
-                        height: 23em;
+                        height: 25em;
                     }
 
                         .body > .spMoi > .slide > .carousel-inner > .item > .sp > .khung:hover {
@@ -300,6 +300,7 @@
 
 .body > .chiTietSP {
     margin-top: 1em;
+    padding:0;
 }
 
     .body > .chiTietSP > .chiTiet {

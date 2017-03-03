@@ -185,6 +185,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\AccessCounter\" />
     <Folder Include="bower_components\sweetalert\" />
     <Folder Include="Content\admin\js\core\cache\" />
     <Folder Include="Content\Front\fonts\" />
@@ -195,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Controllers\AccessCounterController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannerAPIController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannersController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesAPIController.cs" />
@@ -262,6 +264,9 @@
       <DependentUpon>Lioa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryProduct.cs">
+      <DependentUpon>Lioa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientAccess.cs">
       <DependentUpon>Lioa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs">
@@ -2286,6 +2291,7 @@
     <Content Include="Content\Front\images\icon.png" />
     <Content Include="Content\Front\images\Lioa1Pha.png" />
     <Content Include="Content\Front\images\Lioa3PhaKho.png" />
+    <Content Include="Content\Front\images\logo-lioa.jpg" />
     <Content Include="Content\Front\images\logo-lioa.png" />
     <Content Include="Content\Front\images\Logo.png" />
     <Content Include="Content\Front\images\LogoNho.png" />
@@ -2313,13 +2319,32 @@
     <Content Include="Content\Images\files\6.jpg" />
     <Content Include="Content\Images\files\a.jpg" />
     <Content Include="Content\Images\files\b.JPG" />
+    <Content Include="Content\Images\files\bn.jpg" />
+    <Content Include="Content\Images\files\bt.jpg" />
+    <Content Include="Content\Images\files\c%281%29.jpg" />
     <Content Include="Content\Images\files\c.JPG" />
+    <Content Include="Content\Images\files\ca.jpg" />
+    <Content Include="Content\Images\files\e.jpg" />
     <Content Include="Content\Images\files\f%281%29.jpg" />
     <Content Include="Content\Images\files\f.JPG" />
+    <Content Include="Content\Images\files\g.jpg" />
+    <Content Include="Content\Images\files\gv.jpg" />
     <Content Include="Content\Images\files\h.JPG" />
+    <Content Include="Content\Images\files\hv.jpg" />
+    <Content Include="Content\Images\files\kv.jpg" />
+    <Content Include="Content\Images\files\l.jpg" />
+    <Content Include="Content\Images\files\lq.png" />
     <Content Include="Content\Images\files\n.jpg" />
+    <Content Include="Content\Images\files\ng.jpg" />
+    <Content Include="Content\Images\files\r.jpg" />
+    <Content Include="Content\Images\files\rj.jpg" />
+    <Content Include="Content\Images\files\rt.jpg" />
     <Content Include="Content\Images\files\s.JPG" />
+    <Content Include="Content\Images\files\tr.jpg" />
     <Content Include="Content\Images\files\v.jpg" />
+    <Content Include="Content\Images\files\vc.jpg" />
+    <Content Include="Content\Images\files\vd.jpg" />
+    <Content Include="Content\Images\files\zx.jpg" />
     <Content Include="Content\Images\images\BienApDienLuc.png" />
     <Content Include="Content\Images\images\BienApLioa.png" />
     <Content Include="Content\Images\images\ChiTietSP.png" />
@@ -2327,6 +2352,8 @@
     <Content Include="Content\Images\images\Lioa1Pha.png" />
     <Content Include="Content\Images\images\Lioa3PhaKho.png" />
     <Content Include="Content\Images\images\QC.png" />
+    <Content Include="Content\Images\images\Quang cao\banner doïc 2.jpg" />
+    <Content Include="Content\Images\images\Quang cao\banner dọc 1.jpg" />
     <Content Include="Content\Images\images\Quang cao\qc.jpg" />
     <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-102-100KVA.jpg" />
     <Content Include="Content\Images\images\San pham\bien ap dien luc\3D-103-1000KVA.jpg" />
@@ -2376,12 +2403,32 @@
     <Content Include="Content\Images\_thumbs\Files\6.jpg" />
     <Content Include="Content\Images\_thumbs\Files\a.jpg" />
     <Content Include="Content\Images\_thumbs\Files\b.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\bn.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\bt.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\c%281%29.jpg" />
     <Content Include="Content\Images\_thumbs\Files\c.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\ca.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\e.jpg" />
     <Content Include="Content\Images\_thumbs\Files\f%281%29.jpg" />
     <Content Include="Content\Images\_thumbs\Files\f.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\g.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\gv.jpg" />
     <Content Include="Content\Images\_thumbs\Files\h.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\hv.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\kv.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\l.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\lq.png" />
     <Content Include="Content\Images\_thumbs\Files\n.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\ng.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\r.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\rj.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\rt.jpg" />
     <Content Include="Content\Images\_thumbs\Files\s.JPG" />
+    <Content Include="Content\Images\_thumbs\Files\tr.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\v.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\vc.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\vd.jpg" />
+    <Content Include="Content\Images\_thumbs\Files\zx.jpg" />
     <Content Include="Content\Images\_thumbs\Images\BienApDienLuc.png" />
     <Content Include="Content\Images\_thumbs\Images\BienApLioa.png" />
     <Content Include="Content\Images\_thumbs\Images\ChiTietSP.png" />
@@ -2389,6 +2436,8 @@
     <Content Include="Content\Images\_thumbs\Images\Lioa1Pha.png" />
     <Content Include="Content\Images\_thumbs\Images\Lioa3PhaKho.png" />
     <Content Include="Content\Images\_thumbs\Images\QC.png" />
+    <Content Include="Content\Images\_thumbs\Images\Quang cao\banner doïc 2.jpg" />
+    <Content Include="Content\Images\_thumbs\Images\Quang cao\banner dọc 1.jpg" />
     <Content Include="Content\Images\_thumbs\Images\Quang cao\qc.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-102-100KVA.jpg" />
     <Content Include="Content\Images\_thumbs\Images\San pham\bien ap dien luc\3D-103-1000KVA.jpg" />
@@ -3021,6 +3070,7 @@
     <Content Include="Views\Shared\_QC.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Shared\_Temp.cshtml" />
+    <Content Include="Views\AccessCounter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

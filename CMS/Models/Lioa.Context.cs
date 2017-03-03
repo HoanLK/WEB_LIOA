@@ -28,6 +28,7 @@ namespace CMS.Models
         public virtual DbSet<Banner> Banner { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<CategoryProduct> CategoryProduct { get; set; }
+        public virtual DbSet<ClientAccess> ClientAccess { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<Post> Post { get; set; }

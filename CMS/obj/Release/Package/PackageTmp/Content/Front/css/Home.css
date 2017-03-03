@@ -3,6 +3,7 @@
 }
 
     .home > .leftHome {
+        padding-left:0;
     }
 
         .home > .leftHome > .listSP {
@@ -80,7 +81,7 @@
                 }
 
                     .home > .centeHome > .panel-success > .panel-body > .sp > .khung {
-                        height: 18em;
+                        height: 19em;
                         padding: 0;
                         border: 1px solid #ff9100;
                         border-radius: 10px;
@@ -134,6 +135,7 @@
                         }
 
     .home > .rightHome {
+        padding-right:0;
     }
 
         .home > .rightHome > .listBV {

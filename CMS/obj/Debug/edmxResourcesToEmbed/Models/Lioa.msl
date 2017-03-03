@@ -65,6 +65,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ClientAccess">
+      <EntityTypeMapping TypeName="LioaModel.ClientAccess">
+        <MappingFragment StoreEntitySet="ClientAccess">
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="ipClient" ColumnName="ipClient" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Contact">
       <EntityTypeMapping TypeName="LioaModel.Contact">
         <MappingFragment StoreEntitySet="Contact">

@@ -58,7 +58,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mid">
             <a href="@Url.Action("Index","Home")" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 logo">
-                <img src="~/Content/Front/images/logo-lioa.png" class="img-responsive" style="width: 80%;"/>
+                <img src="~/Content/Front/images/logo-lioa.jpg" class="img-responsive" style="width: 80%;" />
             </a>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 thongTinChinh">
                 <p class="tenCty">CÔNG TY CỔ PHẦN BIGWIN VIỆT NAM</p>
@@ -68,7 +68,7 @@
                 <a class="sdt" href="tel:0932213699"><span class="fa fa-volume-control-phone"></span> 093.221.3699</a> - <a class="sdt" href="tel:0904175696">090.417.5696</a>
             </div>
             @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 goiNgay">
-            </div>*@
+                </div>*@
             <a href="@Url.Action("Index","Home")" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 logo">
                 <img src="~/Content/Front/images/Logo.png" class="img-responsive" />
             </a>
@@ -87,9 +87,9 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                             <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
-                            <li><a href="/bai-viet/bao-gia-6">Báo giá</a></li>
+                            <li><a href="/bai-viet/bang-gia-on-ap-lioa-2016-9">Báo giá</a></li>
                             <li><a href="/danh-muc-san-pham">Sản phẩm</a></li>
-                            <li><a href="/bai-viet/dich-vu-sua-chua-lioa-7">Dịch vụ sửa chữa lioa</a></li>
+                            <li><a href="/danh-muc-bai-viet/tin-tuc-2">Dịch vụ sửa chữa lioa</a></li>
                             <li><a href="/bai-viet/trung-tam-bao-hanh-lioa-8">Trung tâm bảo hành lioa</a></li>
                             <li><a href="/lien-he">Liên hệ</a></li>
                         </ul>
@@ -154,13 +154,13 @@
     <script src="~/Scripts/angular-cookies.min.js"></script>
 
     <!--Popup tết-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="~/Content/Front/Popup/jquery.popup.min.js"></script>
-    <script type="text/javascript">
-        $(window).load(function () {
-            $('#myModal').popup($('#myModal').data());
-        });
-    </script>
+    @*<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="~/Content/Front/Popup/jquery.popup.min.js"></script>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $('#myModal').popup($('#myModal').data());
+            });
+        </script>*@
 
     <!--Message-->
     <script src="~/Content/admin/js/libs/toastr/toastr.min.js"></script>
@@ -219,5 +219,20 @@
     <!--Search-->
     <script src="~/Scripts/Front/searchController.min.js"></script>
     <script src="~/Scripts/Front/showSearchController.min.js"></script>
+
+    <!--Chat-->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/58b79a3c97fbd80a94f21940/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>

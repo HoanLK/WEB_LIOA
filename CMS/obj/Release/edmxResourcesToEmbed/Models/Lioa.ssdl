@@ -61,6 +61,14 @@
     <Property Name="robots" Type="varchar" MaxLength="50" />
     <Property Name="image_banner" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="ClientAccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ipClient" Type="varchar" MaxLength="50" />
+    <Property Name="time" Type="date" />
+  </EntityType>
   <EntityType Name="Contact">
     <Key>
       <PropertyRef Name="idContact" />
@@ -248,6 +256,7 @@
     <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CategoryProduct" EntityType="Self.CategoryProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientAccess" EntityType="Self.ClientAccess" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
